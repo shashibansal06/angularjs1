@@ -1,0 +1,45 @@
+@import './scss/base';
+.notificationPage{
+  .box{
+    margin-bottom:4px;
+    border-bottom:1px solid #F6F9FE;
+    padding:15px 20px;
+    @include media("<=767px") {
+      padding:10px 15px;
+    }
+    &.unread, &:hover{
+      background-color: #F5F7F8;
+    }
+    .userImage{
+      @include height-width(54px,54px);
+      margin-right:15px;
+      @include media("<=1200px") {
+        margin-right:10px;
+      }
+      @include media("<=767px") {
+        @include height-width(40px,40px);
+      }
+    }
+    .norifiDetail{
+      width: calc(100% - 70px);
+      @include media("<=767px") {
+        width: calc(100% - 50px);
+      }
+      p{
+        color:$darken-grey;
+        margin:0;
+        @include media("<=767px") {
+          font-size: 16px;
+        }
+        span{
+          color:$font-color;
+        }
+      }
+      h4{
+        @include text-format-weight(14px,#BCCAD8,400);
+        margin-bottom:0;
+      }
+    }
+
+  }
+}

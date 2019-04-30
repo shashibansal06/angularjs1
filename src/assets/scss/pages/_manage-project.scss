@@ -1,0 +1,66 @@
+.managePages{
+  .arrow{
+    a{
+      &:hover, &:focus{
+        &:before{
+          color: #486AA3;
+        }
+      }
+    }
+  }
+  .boxSection{
+    @include media("<=992px") {
+      margin-bottom:20px;
+    }
+    .box-inner{
+      padding:33px 5px 0px 5px;
+      border:1px solid transparent;
+      margin: 10px 0;
+      @include media("<=1200px") {
+        padding-top:20px;
+      }
+      &:hover,&:focus{
+        border-color:#DDE3E9;
+      }
+      h2{
+        font-weight: 600;
+        font-size: 20px;
+        margin:0;
+        @include media("<=1300px") {
+          font-size: 18px;
+        }
+        @include media("<=1200px") {
+          font-size: 16px;
+        }
+      }
+      h4{
+        @include text-format-weight(16px,$darken-grey,400);
+        margin:0;
+        @include media("<=1300px") {
+          font-size: 14px;
+        }
+      }
+      h3{
+        font-weight: 400;
+        font-size: 16px;
+        margin:0;
+        line-height: 24px;
+        @include media("<=1300px") {
+          font-size: 14px;
+        }
+        span{
+          color: $color00;
+          display: block;
+        }
+      }
+      .boxBottom{
+        padding: 10px 15px;
+        min-height: 65px;
+        border-top: 1px solid rgba(0,0,0,0.1);
+        @include media("<=1200px") {
+          padding: 5px 10px;
+        }
+      }
+    }
+  }
+}

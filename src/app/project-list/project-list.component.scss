@@ -1,0 +1,19 @@
+@import './scss/base';
+.projectStatusBox{
+  padding:10px 0;
+  border-top:1px solid rgba(0,0,0,0.1);
+  margin-top:10px;
+  h5{
+    font-size: 24px;
+    text-align: left;
+    color: $color02;
+    span{
+      font-size: 16px;
+      display: block;
+      color: $color00;
+    }
+    &.red{
+      color:$color06;
+    }
+  }
+}

@@ -1,0 +1,92 @@
+<div class="heading d-flex justify-content-between align-items-start mb-3">
+    <h1>Dashboard</h1>
+  </div>
+  <div class="dashboardPage">
+     <div class="row boxSection">
+      <div class="box col-sm-6 col-lg-3 text-center">
+        <div class="box-inner shadowBox">
+          <h2>My Projects</h2>
+          <div class="icon">
+            <div class="icon-inner d-flex justify-content-center align-items-center">
+              <i class="icon-myproject"></i>
+            </div>
+          </div>
+          <div class="boxBottom d-flex justify-content-between align-items-center">
+            <div class="text-left"><h3>14</h3></div>
+            <div class="arrow"><a href="" class="icon-arrow-right"></a></div>
+          </div>
+        </div>
+      </div>
+      <div class="box col-sm-6 col-lg-3 text-center">
+        <div class="box-inner shadowBox">
+          <h2>Points Earned</h2>
+          <div class="icon sky">
+              <div class="icon-inner d-flex justify-content-center align-items-center">
+              <i class="icon-point"></i>
+            </div>
+          </div>
+          <div class="boxBottom d-flex justify-content-between align-items-center">
+            <div class="text-left"><h3>14</h3></div>
+            <div class="arrow"><a routerLink="/consumer/point-history" class="icon-arrow-right"></a></div>
+          </div>
+        </div>
+      </div>
+      <div class="box col-sm-6 col-lg-3 text-center">
+        <div class="box-inner shadowBox">
+          <h2>Reports Submitted</h2>
+          <div class="icon orange">
+              <div class="icon-inner d-flex justify-content-center align-items-center">
+              <i class="icon-issueReported"></i>
+            </div>
+          </div>
+          <div class="boxBottom d-flex justify-content-between align-items-center">
+            <div class="text-left"><h3>14</h3></div>
+            <div class="arrow"><a routerLink="/consumer/submitted-list" class="icon-arrow-right"></a></div>
+          </div>
+        </div>
+      </div>
+      <div class="box col-sm-6 col-lg-3 text-center">
+        <div class="box-inner shadowBox">
+          <h2>My Current Badge</h2>
+          <div class="icon green">
+              <div class="icon-inner d-flex justify-content-center align-items-center">
+              <i class="icon-current"></i>
+            </div>
+          </div>
+          <div class="boxBottom d-flex justify-content-between align-items-center">
+            <div class="text-left">
+              <h3>Beginner<span>1000 points more to be Competent</span></h3>
+            </div>
+            <div class="arrow"><a href="" class="icon-arrow-right"></a></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="listSection">
+      <div class="listTop d-flex align-items-center justify-content-between">
+        <h2>Latest Submitted Reports</h2>
+        <button  routerLink="/consumer/submitted-list" class="btn btn-outline-primary custom-btn">View All</button>
+      </div>
+
+      <div class="row d-lg-flex align-items-center shadowBox reportlist" *ngFor="let list of statusList">
+        <div class="col-lg-5">
+          <h5>Report ID :{{list.id}}</h5>
+          <h2>{{list.title}}</h2>
+          <h3>{{list.siteName}}</h3>
+        </div>
+        <div class="col-6 col-lg-2">
+          <h5>Lychees</h5>
+          <h4>{{list.quantity}}</h4>
+        </div>
+        <div class="col-6 col-lg-2">
+          <h5>Status</h5>
+          <h3 [ngClass]="{'red': list.status == 'Declined by SP', 'orange': list.status == 'No action Taken', 'green': list.status == 'Approved by SP'}">{{list.status}}</h3>
+        </div>
+        <div class="col-6 col-lg-2">
+          <h5>Date Assigned</h5>
+          <h4>{{list.date}}</h4>
+        </div>
+        <div class="arrow col-6 col-lg-1"><a routerLink="/consumer/report-detail" class="icon-arrow-right"></a></div>
+      </div>
+  </div>
+  <app-musicbtn></app-musicbtn>

@@ -1,0 +1,12 @@
+@import './scss/base';
+.pricingPage{
+  &.subscriptionPage{
+    .toggleBlock{
+      .radio-toggle{
+        label{
+          background: #FAFBFF;
+        }
+      }
+    }
+  }
+}

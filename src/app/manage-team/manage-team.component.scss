@@ -1,0 +1,26 @@
+@import './scss/base';
+.manageTeamPage{
+  .boxSection{
+    .box-inner{
+      .activestatus{
+        span{
+          left: 13px;
+          @include media("<=1200px") {
+            left:10px;
+          }
+        }
+      }
+
+      h2{
+        margin-top:10px;
+      }
+      .button{
+        &.btn-sm {
+          height:34px;
+          line-height: 34px;
+          font-size: 11px;
+        }
+      }
+    }
+  }
+}

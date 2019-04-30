@@ -1,0 +1,65 @@
+<footer>
+  <div class="_dataContainer" [ngClass]="{'footerBg': router.url === '/home'}">
+    <div class="container" *ngIf="router.url === '/home'">
+      <div class="_signUpOpt">
+        <h2>Sign Up Today for Early Access</h2>
+        <p>Become a founding member of Lychees and recieve 10,000 Lychee points for free to get you started.</p>
+        <div class="_btnOpt">
+          <button  routerLink="/signUp" class="button button-rounded button-height-large button-font-medium button-width-large button-uppercase  button-h-left-2">
+            <span>BECOME A MEMBER</span>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-links" *ngIf="isDataHeader == true">
+      <div class="container">
+        <div class="row no-gutters align-items-center">
+          <div class="col-lg-2">
+            <a href="#" class="_footerLogo">
+              <img src="assets/images/logo-blue.png" alt="img">
+            </a>
+          </div>
+          <div class="col-lg-10 text-lg-right">
+            <div class="_linksNav">
+              <ul>
+                <li>
+                  <a routerLink="/faq">FAQ's</a>
+                </li>
+                <li>
+                  <a routerLink="/terms">Terms &amp; Conditions</a>
+                </li> 
+                <li>
+                  <a routerLink="/privacyPolicy">Privacy Policy</a>
+                </li>
+                <li>
+                  <a routerLink="/investerRelations">Investor Relations</a>
+                </li>
+                <li>
+                  <a routerLink="/contact">Contact Us</a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="_socialLinks">
+              <ul>
+                <li>
+                  <a href="#" class="icon-twitter"></a>
+                </li>
+                <li>
+                  <a href="#" class="icon-google"></a>
+                </li>
+                <li>
+                  <a href="#" class="icon-facebook"></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footerCopyBlock text-center">
+      <p>&copy; 2018 Lychees. All rights reserved.</p>
+    </div>
+  </div>
+</footer>

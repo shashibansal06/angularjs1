@@ -1,0 +1,158 @@
+<div class="heading d-sm-flex justify-content-between align-items-center">
+  <h1>Manage Projects</h1>
+  <div class="d-flex justify-content-between">
+    <button
+      class="button button-rounded button-uppercase button-width-large" (click)="staticModal.show()">
+      <i class="icon-plus"></i> add new project
+    </button>
+    <div class="btn-group" dropdown [autoClose]="false">
+      <button
+        id="button-basic"
+        dropdownToggle
+        type="button"
+        class="icon-search circleBtn dropdown-toggle"
+        aria-controls="dropdown-basic"
+      ></button>
+      <div id="dropdown-basic" *dropdownMenu class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="button-basic">
+        <input type="text" placeholder="Search Here" class="searchInput" />
+      </div>
+    </div>
+  </div>
+</div>
+<div class="managePages manageProjectPage">
+  <div class="row boxSection">
+    <div
+      class="box col-sm-6 col-lg-3 text-center"
+      *ngFor="let list of [1, 2, 3, 4, 5, 6, 7, 8]"
+    >
+      <div class="box-inner shadowBox">
+        <h2>Amazon</h2>
+        <h4>www.amazon.com</h4>
+        <div class="circleIcon">
+          <div
+            class="circleIcon-inner d-flex justify-content-center align-items-center"
+          >
+            <span>14</span>
+          </div>
+        </div>
+        <h3>Reports Submitted <span>Created Date : 16th Sep 2017</span></h3>
+        <ul class="iconList d-flex align-items-center justify-content-around">
+          <li>
+            <i
+              class="icon-code"
+              popover="Mendit Code"
+              triggers="mouseenter:mouseleave"
+            ></i>
+          </li>
+          <li>
+            <i
+              class="icon-Edit"
+              popover="Edit"
+              triggers="mouseenter:mouseleave"
+            ></i>
+          </li>
+          <li>
+            <i
+              class="icon-Delete"
+              popover="Delete"
+              triggers="mouseenter:mouseleave"
+              (click)="deleteConfirmationModal()"
+            ></i>
+          </li>
+        </ul>
+        <div
+          class="boxBottom d-xl-flex justify-content-between align-items-center"
+        >
+          <div class="text-left d-flex align-items-center">
+            <ul class="imageList">
+              <li class="userImage">
+                <img src="assets/images/profilePic.png" />
+              </li>
+              <li class="number">14</li>
+            </ul>
+            <h4>Team Members</h4>
+          </div>
+          <div class="arrow text-right">
+            <a href="" class="icon-arrow-right"></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-musicbtn></app-musicbtn>
+
+
+
+
+
+<!-- add project modal start -->
+<div class="modal fade" bsModal #staticModal="bs-modal" [config]="{ backdrop: 'static' }" tabindex="-1" role="dialog"  aria-labelledby="dialog-static-name">
+  <div class="modal-dialog modal-lg customModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 id="dialog-static-name" class="modal-title pull-left">
+          Add Project
+        </h4>
+        <!-- <h4 id="dialog-static-name" class="modal-title pull-left">Edit Project</h4> -->
+        <button
+          type="button"
+          class="close pull-right"
+          aria-label="Close"
+          (click)="staticModal.hide()"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="field-group">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label class="">PROJECT</label>
+                  <input
+                    class="form-control"
+                    placeholder="Project"
+                    type="text"
+                  />
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label class="">PROJECT URL</label>
+                  <input
+                    class="form-control"
+                    placeholder="www.example.com"
+                    type="text"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label class="">PROJECT DETAILS (OPTIONAL)</label>
+                  <textarea
+                    class="form-control"
+                    placeholder="Say somthing about your project"
+                  ></textarea>
+                </div>
+              </div>
+            </div>
+            <div class="btn-field text-right padding-top-2x">
+              <button
+                class="button button-rounded button-uppercase button-width-large"
+                (click)="projectAddedModal()"
+              >
+                CREATE
+              </button>
+              <!-- <button class="button button-rounded button-uppercase button-width-large"  (click)="projectupdateModal()">Update</button> -->
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+

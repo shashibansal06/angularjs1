@@ -1,0 +1,114 @@
+<div class="heading d-sm-flex justify-content-between align-items-center">
+  <h1>Manage Team</h1>
+  <div class="d-flex justify-content-between">
+    <button class="button button-rounded button-uppercase button-width-large" (click)="addmemberModal.show()"><i class="icon-plus"></i> add new member</button>
+    <div class="btn-group" dropdown  [autoClose]="false">
+      <button id="button-basic" dropdownToggle type="button" class="icon-search circleBtn dropdown-toggle"  aria-controls="dropdown-basic">
+      </button>
+      <div  id="dropdown-basic" *dropdownMenu class="dropdown-menu dropdown-menu-right"
+      role="menu" aria-labelledby="button-basic">
+          <input type="text" placeholder="Search Here" class="searchInput">
+      </div>
+    </div>
+  </div>
+</div>
+<div class="managePages manageTeamPage">
+  <div class="row boxSection">
+    <div class="box col-sm-6 col-lg-3 text-center" *ngFor="let list of [1,2]">
+      <div class="box-inner shadowBox">
+        <div class="activestatus">
+          <div class="userImage">
+            <img src="assets/images/bitmap.png" alt="" class="img-fluid">
+          </div>
+          <span class="green"></span>
+        </div>
+        <h2>Leona Curtis</h2>
+        <h4>leona_curtis@youpmail.com</h4>
+        <ul class="iconList d-flex align-items-center justify-content-around">
+          <li><i class="icon-Edit" popover="Edit" triggers="mouseenter:mouseleave"></i></li>
+          <li><i class="icon-Delete" popover="Delete" triggers="mouseenter:mouseleave"></i></li>
+        </ul>
+        <div class="boxBottom d-xl-flex justify-content-between align-items-center">
+          <div class="text-left d-flex align-items-center">
+            <ul class="imageList">
+              <li class="number">14</li>
+            </ul><h4>Reports Assigned</h4></div>
+          <div class="arrow text-right"><a routerLink="/team/member-report-list" class="icon-arrow-right"></a></div>
+        </div>
+      </div>
+    </div>
+    <div class="box col-sm-6 col-lg-3 text-center">
+        <div class="box-inner shadowBox">
+          <div class="activestatus">
+            <div class="userImage">
+              <img src="assets/images/bitmap.png" alt="" class="img-fluid">
+            </div>
+            <span></span>
+          </div>
+          <h2>Leona Curtis</h2>
+          <h4>leona_curtis@youpmail.com</h4>
+          <ul class="iconList d-flex align-items-center justify-content-around">
+            <li><button class="button btn-sm button-rounded button-uppercase button-width-large">Resend Request</button></li>
+          </ul>
+          <div class="boxBottom d-xl-flex justify-content-between align-items-center">
+            <div class="text-left d-flex align-items-center">
+              <ul class="imageList">
+                <li class="number">14</li>
+              </ul><h4>Reports Assigned</h4></div>
+            <div class="arrow text-right"><a routerLink="/team/member-report-list" class="icon-arrow-right"></a></div>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
+<app-musicbtn></app-musicbtn>
+
+<!-- add project modal start -->
+<div class="modal fade" bsModal #addmemberModal="bs-modal" [config]="{backdrop: 'static'}"
+     tabindex="-1" role="dialog" aria-labelledby="dialog-static-name">
+  <div class="modal-dialog modal-lg customModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 id="dialog-static-name" class="modal-title pull-left">Add Team Member</h4>
+        <!-- <h4 id="dialog-static-name" class="modal-title pull-left">Edit Team Member</h4> -->
+        <button type="button" class="close pull-right" aria-label="Close" (click)="addmemberModal.hide()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form>
+          <div class="field-group">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label class="">FIRST NAME</label>
+                  <input class="form-control" placeholder="#Josh" type="text" />
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-group">
+                  <label class="">Last NAME</label>
+                  <input class="form-control" placeholder="#Smith" type="text" />
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <label class="">EMAIL ADDRESS</label>
+                  <input class="form-control" placeholder="example@mail.com" type="email" />
+                </div>
+              </div>
+            </div>
+            <div class="btn-field text-right padding-top-2x">
+              <button class="button button-rounded button-uppercase button-width-large"  (click)="requestSendModal()">SEND REQUEST</button>
+              <!-- <button class="button button-rounded button-uppercase button-width-large">Update</button> -->
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+

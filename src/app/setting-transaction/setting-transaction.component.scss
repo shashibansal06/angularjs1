@@ -1,0 +1,28 @@
+@import './scss/base';
+.transactionList{
+  .reportlist{
+    &:hover{
+      .arrow{
+        a{
+          &:before{
+            color: #486AA3;
+          }
+        }
+      }
+    }
+    h4{
+      font-size: 18px;
+      @include media("<=1300px") {
+        font-size: 16px;
+      }
+      @include media("<=992px") {
+        font-size: 14px;
+      }
+    }
+    .arrow{
+      a{
+        font-size: 22px;
+      }
+    }
+  }
+}

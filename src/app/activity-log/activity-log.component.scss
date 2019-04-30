@@ -1,0 +1,51 @@
+
+@import './scss/base';
+.activityPage{
+  .box{
+    border-top: 1px solid #ECECEC;
+    padding:15px 0 25px 0;
+    @include media("<=767px") {
+      padding:10px 0 15px 0;
+    }
+    &:first-child{
+      padding-top: 0;
+      border:0 none;
+    }
+    &.box-1{
+      padding:30px 0;
+      @include media("<=767px") {
+        padding:20px 0;
+      }
+      p{
+        font-weight: 600;
+        color: $color01;
+        span{
+          color:$font-color;
+          font-weight:400;
+        }
+      }
+    }
+    p{
+      color:$darken-grey;
+      margin:0;
+      @include media("<=767px") {
+        font-size: 16px;
+      }
+      span{
+        color:$font-color;
+        display: block;
+        font-size: 19px;
+        @include media("<=767px") {
+          font-size: 17px;
+        }
+      }
+    }
+  }
+  h4{
+    @include text-format-weight(16px,$font-color,500);
+  }
+
+  .form-group{
+    margin: 40px 0 0 0;
+  }
+}

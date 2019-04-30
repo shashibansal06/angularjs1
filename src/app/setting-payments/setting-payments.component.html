@@ -1,0 +1,72 @@
+<nav aria-label="breadcrumb" class="custom_breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="#">Settings</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Payment</li>
+    </ol>
+  </nav>
+  <div class="whitebg paymentPage">
+    <form>
+      <div class="paymentCards row gutters-7">
+        <div class="col-md-6" *ngIf = "!isEditForm">
+          <div class="delete"><button class="icon-Delete"></button></div>
+        </div>
+      </div>
+      <div class="field-group">
+        <div class="row gutters-7">
+          <div class="col-md-8 col-xl-6">
+            <div class="form-group">
+              <label class="label-sm">CARD NUMBER</label>
+              <input class="form-control" placeholder="**** **** **** ****" type="text" />
+            </div>
+          </div>
+        </div>
+        <div class="row gutters-7">
+          <div class="col-md-4">
+            <div class="form-group">
+              <label class="label-sm">CARD HOLDER</label>
+              <input class="form-control" placeholder="First Name" type="text" />
+            </div>
+          </div>
+          <div class="col-4 col-md-2 col-xl-1">
+            <div class="form-group">
+              <label class="label-sm">EXP. DATE</label>
+              <input class="form-control" placeholder="3/18" type="text" />
+            </div>
+          </div>
+          <div class="col-4 col-md-2 col-xl-1">
+            <div class="form-group">
+              <label class="label-sm">CVC</label>
+              <input class="form-control" placeholder="****" type="text" />
+            </div>
+          </div>
+        </div>
+
+        <div class="btn-field padding-top-3x">
+          <button class="button button-rounded button-uppercase button-width-large" (click)="staticModal.show()">Add card</button>
+        </div>
+      </div>
+    </form>
+  </div>
+  <app-musicbtn></app-musicbtn>
+
+   <!-- add project modal start -->
+   <div class="modal fade" bsModal #staticModal="bs-modal" [config]="{backdrop: 'static'}"
+   tabindex="-1" role="dialog" aria-labelledby="dialog-static-name">
+<div class="modal-dialog modal-lg customModal">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h4 id="dialog-static-name" class="modal-title pull-left">Congratulations!</h4>
+      <button type="button" class="close pull-right" aria-label="Close" (click)="staticModal.hide()">
+        <span aria-hidden="true">&times;</span>
+      </button>
+    </div>
+    <div class="modal-body secretCode">
+      <p>You have successfully earned discount of 10 % off on groceries for the project Amazon! Here is your Secret code to apply:</p>
+      <div class="code text-center">ABSCSFS</div>
+      <div class="btn-field text-right">
+        <button class="button button-rounded button-uppercase button-width-large" (click)="staticModal.hide()">Thanks</button>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

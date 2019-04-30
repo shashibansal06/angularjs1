@@ -1,0 +1,82 @@
+<nav aria-label="breadcrumb" class="custom_breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="#">Settings</a></li>
+    <li class="breadcrumb-item"><a href="#">Profile</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Edit Profile</li>
+  </ol>
+</nav>
+
+<div class="whitebg profilePage">
+    <div class="row ">
+      <div class="col-md-10 col-lg-8">
+        <div class="uploadOuter">
+          <div class="userImage">
+            <img src="assets/images/bitmap.png" alt="" class="img-fluid">
+          </div>
+          <div class="uploadIcon">
+            <input type="file">
+            <span class="icon-camera"></span>
+          </div>
+        </div>
+        <tabset>
+          <tab heading="Personal Details">
+            <form>
+              <div class="field-group">
+                <div class="row gutters-7">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label class="label-sm">YOUR NAME</label>
+                      <input class="form-control" placeholder="Mohammed El-Hassan" type="text" />
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label class="label-sm">EMAIL ADDRESS</label>
+                      <input class="form-control" placeholder="mohammed_elh@gmail.com" type="text" />
+                    </div>
+                  </div>
+                </div>
+                <div class="btn-field padding-top-3x">
+                  <button class="button button-rounded button-uppercase button-width-large"  (click)="profileUpdateModal()">Update</button>
+                </div>
+              </div>
+            </form>
+          </tab>
+          <tab heading="Account Password">
+            <form>
+              <div class="field-group">
+                <div class="row gutters-7">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label class="label-sm">OLD PASSWORD</label>
+                      <input class="form-control" placeholder="************" type="text" />
+                    </div>
+                  </div>
+                </div>
+                <div class="row gutters-7">
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label class="label-sm">NEW PASSWORD</label>
+                      <input class="form-control" placeholder="************" type="text" />
+                    </div>
+                  </div>
+                  <div class="col-md-6">
+                    <div class="form-group">
+                      <label class="label-sm">CONFIRM NEW PASSWORD</label>
+                      <input class="form-control" placeholder="Re-enter password" type="text" />
+                    </div>
+                  </div>
+                </div>
+                <div class="btn-field padding-top-3x">
+                  <button class="button button-rounded button-uppercase button-width-large"  (click)="profileUpdateModal()">Update</button>
+                </div>
+                <div class="btn-field mt-2 mt-md-5">
+                  <button class="btn btn-link">Delete My Account</button>
+                </div>
+              </div>
+            </form>
+          </tab>
+        </tabset>
+    </div>
+  </div>
+  <app-musicbtn></app-musicbtn>

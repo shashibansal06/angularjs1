@@ -1,0 +1,209 @@
+.headerBlock {
+  position: absolute;
+  width:100%;
+  z-index: 1;
+  background-color: $theme;
+  @include padding(25 0);
+  @include media("<=767px") {
+    @include padding(15 0);
+    position: relative;
+  }
+  &.inner{
+    background-color: $white;
+    @include padding(30 0);
+  }
+
+  &.open {
+    z-index: 100;
+  }
+  .container-fluid{
+    max-width: 1650px;
+    margin: $za;
+  }
+  .logo{
+    @include media("<=767px") {
+      max-width: 120px;
+      display: inline-block;
+    }
+  }
+  .navBlock {
+    text-align: right;
+    @include media("<=992px") {
+      .ham-icon {
+        margin-top:7px;
+        margin-right: 20px;
+      }
+    }
+    @include media("<=767px") {
+      @include padding-right(50);
+      .ham-icon {
+        @include pos(ab, 10px 15px null null);
+        margin: 0;
+      }
+    }
+    @include media("<=572px") {
+      @include padding-right(0);
+      text-align: center;
+      .ham-icon {
+        top: -30px;
+      }
+    }
+    .navList {
+      display: inline-block;
+      vertical-align: middle;
+      @include media("<=1200px") {
+        display: block;
+        @include pos(fix, 0 null 0 -250px);
+        @include opacity(0);
+        text-align: left;
+        height: 100%;
+        overflow: auto;
+        background-color: $theme;
+        @include box-shadow-custom(3px,0px,6px,rgba(255,255,255,0.5));
+        max-width: 250px;
+        width: 100%;
+        transition: all 300ms ease-in-out;
+        &.open {
+          @include opacity(1);
+          z-index: 100;
+          left: 0;
+        }
+      }
+      &>ul {
+        &>li {
+          display: inline-block;
+          @include padding(0 17);
+          @include media("<=1200px") {
+            display: block;
+            @include padding(0 10);
+          }
+          &>a {
+            font-size:14px;
+            font-weight: 600;
+            @include padding(8 0);
+            text-decoration: none;
+            color: $white;
+            text-transform: uppercase;
+            display: block;
+            -webkit-transform: perspective(1px) translateZ(0);
+            transform: perspective(1px) translateZ(0);
+            position: relative;
+            overflow: hidden;
+            &:before {
+              content: "";
+              position: absolute;
+              z-index: -1;
+              right: 0;
+              width: 0;
+              bottom: 2px;
+              background: $white;
+              @include radius(2px);
+              height: 1px;
+              -webkit-transition-property: width;
+              transition-property: width;
+              -webkit-transition-duration: 0.2s;
+              transition-duration: 0.2s;
+              -webkit-transition-timing-function: ease-out;
+              transition-timing-function: ease-out;
+            }
+            &:hover:before,
+            &:focus:before,
+            &:active:before {
+              right: auto;
+              left: 0;
+              width: 100%;
+            }
+            &.active {
+              &:before {
+                right: auto;
+                left: 0;
+                width: 100%;
+              }
+            }
+          }
+        }
+      }
+    }
+    ._authOpt {
+      display: inline-block;
+      vertical-align: middle;
+      @include media("<=575px") {
+        margin-top:10px;
+      }
+      ._loginBtn {
+        @include padding(0 20);
+        display: inline-block;
+        vertical-align: middle;
+        border-right: 1px solid #5D78EC;
+        border-left: 1px solid #5D78EC;
+        @include media("<=767px") {
+          border-left: 0;
+          @include padding(0 10 0 0);
+        }
+        &>a {
+          color: $white;
+          display: block;
+          @include fontsize(14);
+          text-decoration: none;
+          @include padding-bottom(5);
+          text-transform: uppercase;
+          .ico {
+            @include margin-right(5);
+            display: inline-block;
+            vertical-align: middle;
+            @include fontsize(24);
+          }
+          span {
+            display: inline-block;
+            vertical-align: middle;
+          }
+          &:hover {
+            color: $color06;
+          }
+        }
+      }
+      .signUp-btn {
+        display: inline-block;
+        vertical-align: middle;
+        font-weight: 600;
+        @include margin-left(40);
+        @include media("<=767px") {
+          @include margin-left(10);
+        }
+      }
+    }
+  }
+}
+
+.sub-header {
+  background-color: $theme;
+  .subTitleContainer {
+    //@include bg-norepeat("#{$url}banner_illustration.png", transparent, no-repeat);
+    background-image: url("#{$url}banner_illustration.png");
+    background-repeat: no-repeat;
+    background-position: right bottom;
+  }
+  .subTitle {
+    color: $white;
+    @include padding(153 0 98);
+    @include media("<=767px") {
+      @include padding(45 0 35);
+    }
+    h3 {
+      font-size:40px;
+      font-weight: 700;
+      @include margin-bottom(0);
+      @include media("<=767px") {
+        font-size:25px;
+      }
+    }
+    h4 {
+      font-size:24px;
+      font-weight: 400;
+      @include margin-bottom(0);
+      @include media("<=767px") {
+        font-size:18px;
+      }
+    }
+  }
+}

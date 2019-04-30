@@ -1,0 +1,181 @@
+@import './scss/base';
+.dashboardHeader{
+  @include pos(f, 0 null null 0);
+  z-index: 1;
+  @include box-shadow(0px 2px 3px #DDE3E9);
+  padding:17px 20px 15px 20px;
+  background-color: $white;
+  @include media("<=992px") {
+    padding:10px 15px;
+  }
+  .dashboradLogo{
+    @include media("<=767px") {
+      max-width: 110px;
+    }
+  }
+  .headerRight{
+    ul{
+      padding-top: 2px;
+      li{
+        display: inline-block;
+        @include text-format-weight(12px,$darken-grey,400);
+        padding:0 28px;
+        @include pos(r, null);
+        @include media("<=767px") {
+          padding:0 10px;
+        }
+        &.menu-icon{
+          padding-right: 0;
+        }
+        i{
+          cursor: pointer;
+        }
+        &:after{
+          content:'';
+          @include pos(a, calc(50% - 11px) null null 0);
+          background-color: #D8D8D8;
+          @include height-width(22px,1px);
+        }
+        &:first-child{
+          &:after{
+            content: none;
+          }
+        }
+        &.userInfo{
+          .userImage{
+            @include height-width(48px ,48px);
+            @include media("<=767px") {
+              @include height-width(30px,30px);
+            }
+          }
+          .userName{
+            @include text-format-weight(16px,$color01,600);
+            @include display(middle);
+            margin-left:10px;
+            text-transform: capitalize;
+            @include media("<=767px") {
+              display: none;
+            }
+          }
+        }
+        i{
+          font-size:17px;
+          color:$color01;
+          @include media("<=767px") {
+            font-size: 16px;
+          }
+          &.icon-Notifications{
+            font-size:19px;
+          }
+        }
+        a{
+          text-decoration: none;
+        }
+      }
+    }
+  }
+  .ham-icon {
+    margin-right: 0;
+    .menu-icon {
+      width: 25px;
+      span {
+        margin-bottom: 2px;
+        &:last-child{
+          margin: 0;
+        }
+        &:before {
+          background-color: $color01;
+        }
+      }
+    }
+  }
+}
+#notificationDropdown.dropdown-menu{
+  background-color: white;
+  @include radius(0px);
+  padding:0px;
+  min-width: 345px;
+  background-color: $white;
+  top:35px !important;
+  @include media("<=575px") {
+    min-width: 210px;
+  }
+  &:before,&:after {
+    content: '';
+    @include pos(a, -8px 18px null null);
+    border-bottom: 8px solid $white;
+    border-right: 14px solid transparent;
+    border-left: 14px solid transparent;
+    @include media("<=575px") {
+      right:4px;
+    }
+  }
+  &:after{
+    border-bottom-color: rgba(0, 0, 0, 0.15);
+    top: -9px;
+    z-index: -1;
+  }
+  .listTop{
+    padding:15px 20px;
+    margin:0;
+    @include media("<=767px") {
+      padding:10px 5px;
+    }
+    h2{
+      @include media("<=767px") {
+        font-size: 16px;
+      }
+    }
+    .custom-btn{
+      height: 28px;
+      line-height: 14px;
+    }
+  }
+  li{
+    &.box{
+      margin-bottom:4px;
+      border-bottom: 1px solid #DDE3E9;
+      padding:15px 20px;
+      @include media("<=767px") {
+        padding:10px 5px;
+      }
+      &:last-child{
+        border:0 none;
+      }
+      &.unread, &:hover{
+        background-color: #F5F7F8;
+      }
+      .userImage{
+        @include height-width(54px ,54px);
+        margin-right:10px;
+        @include media("<=575px") {
+          @include height-width(30px ,30px);
+          margin-right:5px;
+        }
+      }
+      .norifiDetail {
+        width: calc(100% - 70px);
+        @include media("<=575px") {
+          width: calc(100% - 35px);
+        }
+        p{
+          color:$darken-grey;
+          font-size: 16px;
+          line-height: 20px;
+          margin-bottom: 5px;
+          @include media("<=767px") {
+            font-size: 14px;
+          }
+          span{
+            color:$font-color;
+          }
+        }
+        h4{
+          @include text-format-weight(14px,#BCCAD8,400);
+          margin-bottom:0;
+        }
+      }
+    }
+  }
+}
+

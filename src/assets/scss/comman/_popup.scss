@@ -1,0 +1,333 @@
+.modal{
+  text-align: center;
+  padding: 0 !important;
+  &:before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    margin-right: -4px;
+    @media screen and (max-width: 767px) {
+      content: none;
+    }
+  }
+  .modal-dialog {
+    display: inline-block;
+    vertical-align: middle;
+    text-align: left;
+    min-width: 40em;
+    &.modal-lg {
+      max-width: 760px;
+      @include media("<=992px") {
+        max-width: 550px;
+      }
+      @include media("<=767px") {
+        max-width: 94%;
+      }
+    }
+    @media screen and (max-width: 767px) {
+      min-width: 296px;
+    }
+  }
+  .modal-content{
+    @include radius(0px);
+    border: 0 none;
+    .modal-header{
+      display: block;
+      text-align: center;
+      border:0 none;
+      padding:0;
+      .close{
+        @include pos(a, 30px 30px null null);
+        @include text-format-weight(30px,$color01,500);
+        padding: 0;
+        opacity: 1;
+        z-index: 1;
+        @include media("<=767px") {
+          font-size: 20px;
+        }
+      }
+      h4{
+        padding:50px 10px 10px;
+        @include text-format-weight(26px,$color01,400);
+        @include media("<=992px") {
+          padding-top: 30px;
+          font-size: 20px;
+        }
+        @include media("<=767px") {
+          padding: 10px;
+        }
+      }
+    }
+    .modal-body{
+      padding: 35px 105px;
+      @include media("<=992px") {
+        padding: 20px;
+      }
+      @include media("<=767px") {
+        padding: 15px;
+      }
+      p{
+        font-size: 22px;
+        @include media("<=767px") {
+          font-size: 18px;
+        }
+      }
+      .icon-img{
+        display: inline-block;
+        @include media("<=767px") {
+          max-width: 100px;
+        }
+      }
+      &.deleteprojectModal{
+        padding-top:50px;
+        padding-bottom: 70px;
+        @include media("<=767px") {
+          padding-top:30px;
+          padding-bottom: 30px;
+        }
+      }
+      &.filterModal{
+        .nav-tabs{
+          border-top: 1px solid #F6F9FE;
+          border-bottom: 1px solid #F6F9FE;
+          .nav-link.active , .nav-link , .nav-item.show .nav-link{
+            border:0 none;
+            border-bottom:2px solid #F6F9FE;
+          }
+          .nav-link{
+            color: $color00;
+            @include media("<=767px") {
+              font-size: 12px;
+              padding: 5px 0;
+            }
+            &:hover, &:focus, &.active{
+              color:$main-color01;
+              border-color:$main-color01;
+            }
+          }
+        }
+        .tab-content{
+          padding:50px 0 30px 0;
+          @include media("<=767px") {
+            padding:20px 0 20px 0;
+          }
+        }
+      }
+      &.secretCode{
+        p{
+          @include text-format-weight(16px,$darken-grey,400);
+          letter-spacing: 0.61px;
+          line-height: 23px;
+          @include media("<=767px") {
+            font-size: 14px;
+          }
+        }
+        .code{
+          margin:45px 0 20px 0;
+          @include text-format-weight(38px,$color01,400);
+          padding:15px 0;
+          text-transform: uppercase;
+          background: url(#{$url}bar.png) repeat-x;
+          @include media("<=767px") {
+            font-size: 24px;
+            margin:25px 0 15px 0;
+          }
+        }
+      }
+      &.discountModal{
+        .left{
+          h3 {
+            @include text-format-weight(17px,$color00,400);
+            margin:0;
+          }
+          h2{
+            @include text-format-weight(34px,$font-color,600);
+            margin:20px 0 0 0;
+            @include media("<=992px") {
+              font-size: 18px;
+            }
+          }
+          h5{
+            @include text-format-weight(18px,$main-color01,600);
+            @include media("<=992px") {
+              font-size: 16px;
+            }
+          }
+          h4{
+            @include text-format-weight(20px,$color01,400);
+            margin-bottom:35px;
+            @include media("<=992px") {
+              font-size: 14px;
+            }
+            @include media("<=767px") {
+              margin-bottom:20px;
+            }
+            strong{
+              font-weight:600;
+            }
+          }
+        }
+        .right{
+          .circle{
+            border: 1px solid #DDE3E9;
+            @include image-circle(125px,125px,middle);
+            margin-bottom: 15px;
+            @include media("<=1200px") {
+              @include height-width(120px,120px);
+            }
+            @include media("<=992px") {
+              @include height-width(90px,90px);
+            }
+          }
+          h2 {
+            @include text-format-weight(50px,$font-color,600);
+            margin:0;
+            line-height: 40px;
+            @include media("<=992px") {
+              font-size: 30px;
+            }
+            sup{
+              font-size: 20px;
+              @include pos(r, -22px null null);
+              @include media("<=992px") {
+                font-size: 16px;
+                top:-10px;
+              }
+            }
+          }
+          h3 {
+            @include text-format-weight(16px,$color00,400);
+            margin:0;
+            @include media("<=992px") {
+              font-size: 14px;
+            }
+          }
+          h5 {
+            @include text-format-weight(16px,$color00,400);
+            margin:0;
+            span{
+              color:$color01;
+              font-weight: 600;
+              margin-left:5px;
+              text-transform: uppercase;
+            }
+          }
+        }
+        .specialNotes{
+          margin:10px 0 40px;
+          @include media("<=767px") {
+            margin:20px 0px;
+          }
+          p{
+            @include text-format-weight(16px,$darken-grey,400);
+            @include media("<=767px") {
+              font-size: 14px;
+            }
+          }
+          h2{
+            margin:0;
+            @include text-format-weight(17px,$font-color,600);
+            @include media("<=767px") {
+              font-size: 14px;
+            }
+          }
+        }
+        .discFooter{
+          .redeemDate{
+            @include media("<=575px") {
+              margin-bottom:10px;
+            }
+            li{
+              line-height: 20px;
+              @include text-format-weight(15px,$main-color01,600);
+              @include media("<=767px") {
+                font-size: 14px;
+              }
+            }
+          }
+          .button{
+            margin-left:5px;
+          }
+          h4 {
+            display: inline-block;
+            @include text-format-weight(16px,$main-color01,400);
+            border: 1px dashed #DDE3E9;
+            padding:2px 10px;
+            @include radius(4px);
+            @include media("<=992px") {
+              font-size: 14px;
+            }
+          }
+        }
+      }
+      &.assignMemberModal{
+        .teamMember{
+          overflow-x: auto;
+          display: flex;
+          overflow-y: hidden;
+          margin-bottom: 30px;
+          .teammembBox{
+            padding:0 10px 20px 10px;
+            display: inline-block;
+            vertical-align: top;
+          }
+        }
+        .ch-radio {
+          input[type="radio"] {
+            @include pos(ab, 0  0 null auto);
+            &:checked {
+              &+span,
+              &~span {
+                .userImage{
+                  border-color:$color02;
+                }
+                &:before {
+                  content: "";
+                }
+                .ch-icon {
+                  @include opacity(1);
+                  @include translateY(0);
+                }
+              }
+            }
+          }
+          span {
+            text-align: center;
+            letter-spacing: 0.8px;
+            @include padding-left(0);
+            @include fontsize(18);
+            @include media("<=1200px") {
+              @include fontsize(14);
+            }
+            .userImage{
+              @include height-width(114px,114px);
+              border:3px solid $white;
+              display: block;
+              margin-bottom: 5px;
+            }
+            &:before {
+              content: none;
+              background-color: $color02;
+              @include radius(50%);
+              @include pos(ab, 2px 1px null auto);
+              @include square(26px);
+              border:1px solid  $color02;
+            }
+            &:after {
+              content: none;
+            }
+            .ch-icon {
+              color: $white;
+              @include pos(ab, 8px 6px null null);
+              font-weight: bold;
+              @include fontsize(14);
+              @include opacity(0);
+              @include translateY(-100%);
+            }
+          }
+        }
+      }
+    }
+  }
+}

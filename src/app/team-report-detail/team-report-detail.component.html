@@ -1,0 +1,74 @@
+<nav aria-label="breadcrumb" class="custom_breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="#">Manage Reports</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Report Details</li>
+  </ol>
+</nav>
+<div class="detailPage">
+  <div class="">
+    <div class="box row justify-content-between align-items-end">
+      <div class="detailBox col-md-6">
+        <h5>Report ID :0213AAD</h5>
+        <h6><i class="icon-calendar"></i> <span>Submitted On:</span> 26th Nov 2017</h6>
+        <h4>Lychees</h4>
+        <h2>Spelling mistake in Heading </h2>
+        <h3>How Many times reported : 14</h3>
+      </div>
+      <div class="col-md-6 text-md-right rightSect">
+        <div class="">
+          <!-- <button class="button grey button-rounded button-uppercase button-width-large">Undo</button> -->
+          <button class="button button-rounded button-uppercase button-width-large" (click)="resolvedModal()">Resolved</button>
+        </div>
+        <div class="circleIcon">
+          <div class="circleIcon-inner d-flex justify-content-center align-items-center text-center">
+            <span>200<span>Lychees</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="box statusBox d-sm-flex justify-content-between align-items-center">
+      <h4>Status : <span class="navy">Assigned</span>
+        <!-- <span class="orange">Reopened</span>
+        <span class="watergreen">Marked as Resolved</span>
+        <span class="green">Approved</span>
+        <span class="green">Request declined by Admin</span>
+        <span class="red">Declined</span>
+        <span class="watergreen">To be approved by Admin</span>
+      -->
+      </h4>
+    </div>
+  </div>
+  <div class="box cropedBox">
+    <h4>Reported Div Preview</h4>
+    <div class="cropImage">
+      <div class="imgBox">
+        <img src="assets/images/cropImg.jpg" alt="" class="img-fluid">
+      </div>
+    </div>
+  </div>
+  <div class="box commentBox">
+    <h3>Report Comment</h3>
+    <div class="media">
+      <a class="userImage" href="#">
+        <img src="assets/images/mediaImg.png" alt="" class="img-fluid">
+      </a>
+      <div class="media-body">
+        <h5>Patrick</h5>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. Dummy text of the printing and typesetting industry.
+          Lorem Ipsum has been the industry’s.</p>
+        <div class="media nextmedia">
+          <a class="userImage" href="#">
+            <img src="assets/images/mediaImg.png" alt="" class="img-fluid">
+          </a>
+          <div class="media-body">
+            <h5>Me</h5>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-musicbtn></app-musicbtn>
+
+

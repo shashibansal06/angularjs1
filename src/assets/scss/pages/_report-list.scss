@@ -1,0 +1,137 @@
+.reportlist{
+  padding:30px;
+  margin: 0;
+  background-color: $white;
+  border-bottom:1px solid rgba($black,0.1);
+  @include scale(1);
+  @include animate(0.5s,linear);
+  @include media("<=1300px") {
+    padding:15px;
+  }
+  @include media("<=992px") {
+    padding:10px;
+  }
+  &:hover{
+    @include scale(1.01);
+    position: relative;
+    z-index: 1;
+    h2{
+      color: $color03;
+    }
+    .arrow{
+      a{
+        &:before{
+          color: #486AA3;
+        }
+      }
+    }
+  }
+  [class*="col-"]{
+    padding-left: 25px;
+    padding-right:25px;
+    @include media("<=1300px") {
+      padding-left:20px;
+      padding-right:20px;
+    }
+    @include media("<=767px") {
+      padding-left: 15px;
+      padding-right:15px;
+    }
+  }
+  div{
+    border-left:1px solid rgba($black,0.1);
+    @include media("<=992px") {
+      border:0 none;
+      margin:5px 0;
+    }
+    &:first-child{
+      padding-left:0;
+      border-left:0 none;
+      @include media("<=992px") {
+        padding-left:20px;
+      }
+      @include media("<=767px") {
+        padding-left:15px;
+      }
+    }
+  }
+  .userInfo{
+    padding-left: 0 !important;
+    div{
+      border:0 none;
+      h5{
+        margin:0;
+      }
+      h3{
+        color: $font-color;
+      }
+    }
+    .userImage{
+      padding-left: 0;
+      @include height-width(38px,38px);
+      margin-right:15px;
+      @include media("<=1200px") {
+        margin-right:10px;
+      }
+      @include media("<=767px") {
+        @include height-width(30px,30px);
+      }
+    }
+  }
+  h2{
+    @include text-format(22px,400);
+    margin:0;
+    @include media("<=1300px") {
+      font-size: 16px;
+    }
+  }
+  h3{
+    @include text-format-weight(18px,$darken-grey,400);
+    margin:0;
+    @include media("<=1300px") {
+      font-size: 16px;
+    }
+    @include media("<=992px") {
+      font-size: 14px;
+    }
+    &.orange{
+      color: $color04;
+    }
+    &.navy{
+      color: $color03;
+    }
+    &.green{
+      color: $color02;
+    }
+    &.watergreen{
+      color: $color05;
+    }
+    &.red{
+      color: $color06;
+    }
+  }
+  h4{
+    @include text-format(20px,400);
+    margin:0 0 5px 0;
+    @include media("<=1300px") {
+      font-size: 18px;
+    }
+  }
+  h5{
+    @include text-format-weight(15px,#BFC7D1,600);
+    margin:0 0 5px 0;
+    @include media("<=1300px") {
+      font-size: 14px;
+    }
+    @include media("<=992px") {
+      margin-bottom:0;
+    }
+  }
+}
+.listTop{
+  margin-bottom:12px;
+  h2{
+    margin: 0;
+    @include text-format-weight(18px,$darken-grey,400);
+  }
+}

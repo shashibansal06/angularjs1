@@ -1,0 +1,16 @@
+<div class="modal-header text-right">
+  <button type="button" class="close" (click)="bsModalRef.hide()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body text-center deleteprojectModal">
+  <div class="icon-img">
+    <img src="assets/images/{{modalImage}}" alt="" class="img-fluid" />
+  </div>
+  <p class="mt-4">{{modalContent}}</p>
+  <div class="btn-field padding-top-3x">
+    <button class="button button-rounded button-uppercase button-min-105" (click)="bsModalRef.hide()">
+      {{closeBtnName}}
+    </button>
+  </div>
+</div>

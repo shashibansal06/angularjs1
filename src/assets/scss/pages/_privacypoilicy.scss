@@ -1,0 +1,62 @@
+.contentpages{
+    p{
+      margin-bottom:25px;
+      @include media("<=990px") {
+        @include fontsize(16);   
+        margin-bottom:15px;
+      }
+      strong{
+        font-weight:600;
+      }
+    }
+    .panel-group{
+      padding-top:20px;
+    }
+    .card{
+      margin-bottom: 8px;
+      border:0 none;
+      .card-header{
+        background-color: $white;
+        @include text-format(20px,500);
+        @include radius(0);
+        padding:19px 50px;
+        border: 1px solid #DDE3E9;
+        cursor: pointer;
+        @include media("<=990px") {
+          @include fontsize(16);
+          padding:10px 25px;
+        }
+        .arrow{
+          @include display(top);
+          margin-top: 2px;
+          font-size: 1.3em;
+        }
+        .heading{
+          width:calc(100% - 50px);
+          @include display(top);
+          @include pos(r,null);
+          font-weight:600;
+          @include media("<=990px") {
+            font-size:16px;
+          }
+          &:before{
+            content:'Q:';
+            @include pos(a,0 null null -25px);
+            @include media("<=990px") {
+              left:-18px;
+            }
+          }
+        }
+      }
+      .card-body{
+        padding:25px 50px;
+        @include media("<=990px") {
+          padding:15px 25px;
+          @include fontsize(14);
+        }
+      }
+      .panel-collapse{
+        background-color: $white;
+      }
+    }
+  }

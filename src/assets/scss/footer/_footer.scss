@@ -1,0 +1,136 @@
+footer {
+    ._dataContainer {
+        &.footerBg {
+            @include bg-norepeat("#{$url}foter_bg.png", transparent, no-repeat);
+
+            background-color: #fafbff;
+            background-position: center  bottom 30px;
+
+            // background-image: url(#{$url});
+
+        }
+
+        ._signUpOpt {
+            @include padding(87 0 90);
+
+            @include media("<=767px") {
+                @include padding(35 0);
+            }
+
+
+            text-align: center;
+
+            h2 {
+                @include fontsize(40);
+
+                font-weight: 100;
+
+                @include margin-bottom(15);
+
+                line-height: 56px;
+                @include media("<=1200px") {
+                  @include fontsize(30);
+                }
+                @include media("<=767px") {
+                  @include fontsize(23);
+                  line-height: 30px;
+                  @include margin-bottom(5);
+                }
+            }
+
+            ._btnOpt {
+                @include margin-top(40);
+                @include media("<=767px") {
+                  @include margin-top(20);
+                }
+            }
+        }
+
+        .footer-links {
+            @include padding(20 0);
+            background-color: #FAFBFF;
+            @include media("<=990px") {
+                text-align: center;
+            }
+
+
+            ._linksNav {
+                display: inline-block;
+                @include media("<=990px") {
+                    @include margin-top(10);
+                }
+
+
+                & > ul {
+                    & > li {
+                        display: inline-block;
+
+                        & > a {
+                            text-decoration: none;
+
+                            @include padding(0 15);
+
+                            @include fontsize(16);
+
+                            font-family: $font-secondary;
+                            font-weight: 400;
+                            text-transform: capitalize;
+                            color: darken($white, 40%);
+
+                            &:hover, &:focus {
+                                color: $theme;
+                                text-decoration: underline;
+                            }
+                            @include media("<=1200px") {
+                              @include padding(0 10);
+                              @include fontsize(14);
+                            }
+                        }
+                    }
+                }
+            }
+            ._socialLinks{
+              display: inline-block;
+              vertical-align: middle;
+              @include media("<=990px") {
+                @include margin-top(10);
+            }
+
+              & > ul {
+                & > li {
+                    display: inline-block;
+                    & > a {
+                        text-decoration: none;
+                        @include padding(0 15);
+                        @include fontsize(22);
+                        color: darken($white, 40%);
+                        &:hover, &:focus {
+                          color: $theme;
+                        }
+                        @include media("<=1200px") {
+                          @include padding(0 10);
+                          @include fontsize(18);
+                        }
+                    }
+                }
+              }
+            }
+        }
+
+        .footerCopyBlock {
+            @include padding(10 0);
+
+            background-color: $white;
+
+            p {
+                font-family: $font-secondary;
+                font-weight: 200;
+                margin-bottom: 0;
+
+                @include fontsize(12);
+
+                color: darken($white, 40%);
+            }
+        }
+    }
+}

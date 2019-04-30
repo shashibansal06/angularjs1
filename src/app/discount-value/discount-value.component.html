@@ -1,0 +1,266 @@
+<div
+  class="heading d-sm-flex justify-content-between align-items-center mb-2 mb-md-3"
+>
+  <nav aria-label="breadcrumb" class="custom_breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="#">Settings</a></li>
+      <li class="breadcrumb-item active" aria-current="page">
+        Discount Values
+      </li>
+    </ol>
+  </nav>
+  <div class="d-flex justify-content-between">
+    <button
+      class="button button-rounded button-uppercase button-width-large"
+      (click)="discoutvalueModal.show()"
+    >
+      Add Discount Value
+    </button>
+    <div class="btn-group" dropdown [autoClose]="false">
+      <button
+        id="button-basic"
+        dropdownToggle
+        type="button"
+        class="icon-search circleBtn dropdown-toggle"
+        aria-controls="dropdown-basic"
+      ></button>
+      <div
+        id="dropdown-basic"
+        *dropdownMenu
+        class="dropdown-menu dropdown-menu-right"
+        role="menu"
+        aria-labelledby="button-basic"
+      >
+        <input type="text" placeholder="Search Here" class="searchInput" />
+      </div>
+    </div>
+  </div>
+</div>
+<div class="discountValuePage">
+  <div
+    class="boxTop shadowBox d-flex justify-content-between align-items-center"
+  >
+    <h2>Your Points Balance</h2>
+    <div class="rightSec d-flex  align-items-center">
+      <h3>1000</h3>
+      <div class="arrow"><a href="" class="icon-arrow-right"></a></div>
+    </div>
+  </div>
+  <div class="listSection">
+    <div class="row discountList">
+      <div
+        class="col-lg-6 col-xl-4 discountBox"
+        *ngFor="let list of disountvalueList"
+      >
+        <div
+          class="discountBoxInner shadowBox d-sm-flex align-items-center justify-content-between"
+          (click)="discoutDetailModal.show()"
+        >
+          <div class="left">
+            <h3>Value ID:{{ list.id }}</h3>
+            <h2>{{ list.website }}</h2>
+            <h4>
+              <strong>{{ list.no }}</strong> Lychees
+            </h4>
+            <h3>
+              Code<span>{{ list.code }}</span>
+            </h3>
+          </div>
+          <div class="right text-sm-center">
+            <h2>{{ list.percentage }}<sup>%</sup></h2>
+            <h3>Discount</h3>
+            <h4
+              class="text-center"
+              [ngClass]="{ green: list.redmeemStatus !== 'Yet to Redeem' }"
+            >
+              {{ list.redmeemStatus }}
+            </h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-musicbtn></app-musicbtn>
+
+  <!-- discount value modal start -->
+  <div
+    class="modal fade"
+    bsModal
+    #discoutvalueModal="bs-modal"
+    [config]="{ backdrop: 'static' }"
+    tabindex="-1"
+    role="dialog"
+    aria-labelledby="dialog-static-name"
+  >
+    <div class="modal-dialog modal-lg customModal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 id="dialog-static-name" class="modal-title pull-left">
+            Discount Values
+          </h4>
+          <button
+            type="button"
+            class="close pull-right"
+            aria-label="Close"
+            (click)="discoutvalueModal.hide()"
+          >
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="field-group">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label class="">PROJECT</label>
+                    <input
+                      class="form-control"
+                      placeholder="Project"
+                      type="text"
+                    />
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label class="">SCORE POINTS</label>
+                    <input
+                      class="form-control"
+                      placeholder="www.example.com"
+                      type="text"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label class="">DISCOUNT VALUE</label>
+                    <input
+                      class="form-control"
+                      placeholder="Project"
+                      type="text"
+                    />
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <label class="">VALUE CODE</label>
+                    <input
+                      class="form-control"
+                      placeholder="www.example.com"
+                      type="text"
+                    />
+                  </div>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label class="">Achievement notes</label>
+                    <textarea
+                      class="form-control"
+                      placeholder="Give some positive reinforcement for finding an issue"
+                    ></textarea>
+                  </div>
+                </div>
+              </div>
+              <div class="btn-field text-right padding-top-2x">
+                <button
+                  class="button button-rounded button-uppercase button-width-large"
+                  (click)="createNewDiscountModal()"
+                >
+                  CREATE
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- discount value modal start -->
+  <div
+    class="modal fade"
+    bsModal
+    #discoutDetailModal="bs-modal"
+    [config]="{ backdrop: 'static' }"
+    tabindex="-1"
+    role="dialog"
+    aria-labelledby="dialog-static-name"
+  >
+    <div class="modal-dialog modal-lg customModal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 id="dialog-static-name" class="modal-title pull-left">
+            Discount Value Details
+          </h4>
+          <button
+            type="button"
+            class="close pull-right"
+            aria-label="Close"
+            (click)="discoutDetailModal.hide()"
+          >
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body discountModal">
+          <div
+            class="discountBoxInner d-sm-flex align-items-center justify-content-between"
+          >
+            <div class="left">
+              <h3>Value ID: 00002</h3>
+              <h2>Amazon</h2>
+              <h4><strong>200</strong> Lychees</h4>
+              <h5>Date Created: 26th Nov 2017</h5>
+            </div>
+            <div class="right text-sm-center">
+              <div
+                class="circle d-flex align-items-center justify-content-center"
+              >
+                <div class="circleInner">
+                  <h2>10<sup>%</sup></h2>
+                  <h3>Discount</h3>
+                </div>
+              </div>
+              <h5>Code<span>HHH457A4</span></h5>
+            </div>
+          </div>
+          <div class="specialNotes">
+            <h2>Special Notes</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
+              quam velit, vulputate eu pharetra nec, mattis ac neque. Duis
+              vulputate commodo lectus, ac blandit elit tincidunt id.
+            </p>
+          </div>
+          <div
+            class="d-sm-flex align-items-center justify-content-between discFooter"
+          >
+            <ul class="redeemDate">
+              <li>Redeemed By: 10 Users</li>
+              <li>Redeemed On: 26th Nov 2017</li>
+            </ul>
+            <!-- <h4 class="text-center">Yet to Redeem</h4> -->
+
+            <div class="btn-field">
+              <button
+                class="button red button-rounded button-uppercase button-width-large"
+                (click)="discoutDetailModal.hide()"
+              >
+                Delete
+              </button>
+              <button
+                class="button button-rounded button-uppercase button-width-large"
+                (click)="discoutvalueModal.show()"
+              >
+                Edit
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,9 @@
+@import './scss/base';
+.dashboardCopyright{
+  @include pos(f, null null 0 0);
+  @include text-format-weight(12px,$darken-grey,400);
+  font-family: $font-secondary;
+  width:100%;
+  background-color: $white;
+  padding:2px 0;
+}

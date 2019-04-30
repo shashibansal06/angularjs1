@@ -1,0 +1,41 @@
+@import './scss/base';
+
+.feedbackPage{
+  img{
+    @include media("<=767px") {
+      max-width: 200px;
+    }
+  }
+  h2{
+    @include text-format-weight(28px,$font-color,300);
+    @include media("<=1200px") {
+      font-size: 22px;
+    }
+    @include media("<=767px") {
+      font-size: 20px;
+      margin-top:30px;
+    }
+  }
+  h3{
+    @include text-format-weight(30px,$color01,400);
+    margin:25px 0 55px 0;
+    @include media("<=1200px") {
+      font-size: 24px;
+    }
+    @include media("<=992px") {
+      margin:15px 0 25px 0;
+    }
+    @include media("<=767px") {
+      font-size:22px;
+    }
+  }
+  .form-group{
+    textarea{
+      height:180px;
+      @include media("<=767px") {
+        height:100px;
+      }
+    }
+  }
+}
+

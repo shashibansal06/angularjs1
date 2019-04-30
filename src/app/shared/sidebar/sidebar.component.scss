@@ -1,0 +1,82 @@
+@import './scss/base';
+.dropdown-menu{
+  background-color:  $color01;
+  @include radius(0px);
+  padding:20px 30px;
+  min-width: 200px;
+  @include media("<=1200px") {
+    padding:10px 15px;
+  }
+  li{
+    padding: 8px 0;
+    @include media("<=1200px") {
+      padding:4px 0;
+    }
+    a{
+      @include text-format-weight(16px,$white,600);
+      letter-spacing: 0.5px;
+      text-decoration: none;
+      @include media("<=1200px") {
+        font-size:14px;
+      }
+      &:hover{
+        text-decoration: underline;
+      }
+    }
+  }
+}
+.sidebar{
+  @include box-shadow(0px 2px 4px #DDE3E9);
+  @include text-format-weight(12px,$darken-grey,400);
+  background-color: $white;
+  padding:84px 0 28px 0;
+  @include height-width(100vh,72px);
+  @include pos(f, 0 null null 0);
+  @include media("<=767px") {
+    @include translateX(-100%);
+  }
+  ul{
+    li{
+      a{
+        display: block;
+        padding:21px 0;
+        font-size: 17px;
+        color: $darken-grey;
+        text-align: center;
+        text-decoration: none;
+        border-right:2px solid transparent;
+        i{
+          &:before{
+            color: #7f8fa4;
+          }
+        }
+        &:hover,&.active{
+          border-color: $color01;
+          i{
+            &:before{
+              color: $color01;
+            }
+          }
+        }
+      }
+    }
+  }
+  .logoutBtn{
+    background-color:  $color01;
+    @include text-format-weight(22px,$white,400);
+    height:70px;
+    border:0 none;
+    cursor: pointer;
+    &:hover{
+      opacity: 0.8;
+    }
+  }
+}
+.menuOpen{
+  .sidebar{
+    @include media("<=767px") {
+      @include translateX(0%);
+    }
+  }
+}
+

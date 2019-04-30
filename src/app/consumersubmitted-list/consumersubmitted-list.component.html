@@ -1,0 +1,42 @@
+<div class="heading d-sm-flex justify-content-between align-items-center mb-2 mb-md-3">
+    <h1>Reports Submitted</h1>
+    <div class="d-flex justify-content-between">
+      <!-- <button type="button" class="icon-filter circleBtn"  (click)="filterModal.show()"></button> -->
+      <button type="button" class="icon-filter circleBtn"></button>
+      <div class="btn-group" dropdown [autoClose]="false" >
+        <button id="button-basic" dropdownToggle type="button" class="icon-search circleBtn dropdown-toggle" aria-controls="dropdown-basic">
+        </button>
+        <div  id="dropdown-basic" *dropdownMenu class="dropdown-menu dropdown-menu-right"
+        role="menu" aria-labelledby="button-basic">
+            <input type="text" placeholder="Search Here" class="searchInput">
+        </div>
+      </div>
+    </div>
+  </div>
+    <div class="dashboardPage teamDashboardPage">
+      <div class="listSection">
+        <div class="row d-lg-flex align-items-center shadowBox reportlist" *ngFor="let list of statusList">
+          <div class="col-lg-5">
+            <h5>Report ID :{{list.id}}</h5>
+            <h2>{{list.title}}</h2>
+            <h3>{{list.siteName}}</h3>
+          </div>
+          <div class="col-6 col-lg-2">
+            <h5>Lychees</h5>
+            <h4>{{list.quantity}}</h4>
+          </div>
+          <div class="col-6 col-lg-2">
+            <h5>Status</h5>
+            <h3 [ngClass]="{'red': list.status == 'Declined by SP', 'orange': list.status == 'No action Taken', 'green': list.status == 'Approved by SP'}">{{list.status}}</h3>
+          </div>
+          <div class="col-6 col-lg-2">
+            <h5>Date Assigned</h5>
+            <h4>{{list.date}}</h4>
+          </div>
+          <div class="arrow col-6 col-lg-1"><a routerLink="/consumer/report-detail" class="icon-arrow-right"></a></div>
+        </div>       
+      </div>
+    </div>
+    <app-musicbtn></app-musicbtn>
+  
+  

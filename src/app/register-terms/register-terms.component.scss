@@ -1,0 +1,57 @@
+@import './scss/base';
+.formWrapper{
+  .formWrapper-block{
+    .sFormBox{
+      padding: 60px;
+      @include media("<=1200px") {
+        padding: 40px;
+      }
+      @include media("<=767px") {
+        padding: 20px;
+      }
+      .box{
+        border-bottom: 1px solid #979797;
+        padding:30px 0 50px 0;
+        @include media("<=1200px") {
+          padding:20px 0 40px 0;
+        }
+        @include media("<=767px") {
+          padding:15px 0 25px 0;
+        }
+        &.last{
+          border:0 none;
+          padding-bottom: 30px;
+          @include media("<=767px") {
+            padding-bottom: 25px;
+          }
+        }
+        &:first-child{
+          padding-top:0;
+        }
+        .box-inner{
+          max-height: 200px;
+          overflow-y:auto;
+        }
+      }
+      .form-group {
+        margin-bottom: 10px;
+      }
+      h2{
+        @include text-format(22px,400);
+        color: $color01;
+        margin-bottom: 20px;
+        @include media("<=1200px") {
+          font-size: 16px;
+        }
+      }
+      p{
+        @include text-format(16px,400);
+        color:#3E3E3E;
+        @include media("<=1200px") {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
+

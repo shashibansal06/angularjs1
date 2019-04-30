@@ -1,0 +1,13 @@
+@import './scss/base';
+.deleteAccountPage{
+  h4{
+    @include text-format-weight(16px,$font-color,600);
+  }
+  p{
+    font-size: 14px;
+    line-height: 19px;
+  }
+  .form-group{
+    margin: 40px 0 0 0;
+  }
+}

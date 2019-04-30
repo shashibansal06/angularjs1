@@ -1,0 +1,133 @@
+<div  class="heading d-sm-flex justify-content-between align-items-center mb-2 mb-md-3">
+  <h1>Setting</h1>
+</div>
+<div class="discountValuePage">
+  <div class="boxTop profileEditBox shadowBox d-sm-flex justify-content-between align-items-center">
+    <div class="settingProfileBox d-sm-flex justify-content-between align-items-center">
+      <div class="userImage"><img src="assets/images/profilePic.png"></div>
+      <div>
+        <h3>Mohammed El-Hassan <span>mohammed.elh@gmail.com</span></h3>
+        <button class="btn btn-outline-primary custom-btn" routerLink="/profile">EDIT PROFILE</button>
+      </div>
+    </div>
+    <div class="rightSec d-flex  align-items-center">
+      <h3>1000<span>Your Lychees Balance</span></h3>
+    </div>
+  </div>
+  <div class="listSection">
+    <div class="row discountList">
+      <div
+        class="col-lg-6 col-xl-4 discountBox"
+        *ngFor="let list of disountvalueList"
+      >
+        <div
+          class="discountBoxInner shadowBox d-sm-flex align-items-center justify-content-between"
+          (click)="discoutDetailModal.show()"
+        >
+          <div class="left">
+            <h3>Value ID:{{ list.id }}</h3>
+            <h2>{{ list.website }}</h2>
+            <h4>
+              <strong>{{ list.no }}</strong> Lychees
+            </h4>
+            <h3>
+              Code<span>{{ list.code }}</span>
+            </h3>
+          </div>
+          <div class="right text-sm-center">
+            <h2>{{ list.percentage }}<sup>%</sup></h2>
+            <h3>Discount</h3>
+            <h4 class="text-center" [ngClass]="{ green: list.redmeemStatus !== 'Yet to Redeem' }">
+              {{ list.redmeemStatus }}
+            </h4>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-musicbtn></app-musicbtn>
+
+  <!-- discount value modal start -->
+  <div
+    class="modal fade"
+    bsModal
+    #discoutDetailModal="bs-modal"
+    [config]="{ backdrop: 'static' }"
+    tabindex="-1"
+    role="dialog"
+    aria-labelledby="dialog-static-name"
+  >
+    <div class="modal-dialog modal-lg customModal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 id="dialog-static-name" class="modal-title pull-left">
+            Discount Value Details
+          </h4>
+          <button
+            type="button"
+            class="close pull-right"
+            aria-label="Close"
+            (click)="discoutDetailModal.hide()"
+          >
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body discountModal">
+          <div
+            class="discountBoxInner d-sm-flex align-items-center justify-content-between"
+          >
+            <div class="left">
+              <h3>Value ID: 00002</h3>
+              <h2>Amazon</h2>
+              <h4><strong>200</strong> Lychees</h4>
+              <h5>Date Created: 26th Nov 2017</h5>
+            </div>
+            <div class="right text-sm-center">
+              <div
+                class="circle d-flex align-items-center justify-content-center"
+              >
+                <div class="circleInner">
+                  <h2>10<sup>%</sup></h2>
+                  <h3>Discount</h3>
+                </div>
+              </div>
+              <h5>Code<span>HHH457A4</span></h5>
+            </div>
+          </div>
+          <div class="specialNotes">
+            <h2>Special Notes</h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla
+              quam velit, vulputate eu pharetra nec, mattis ac neque. Duis
+              vulputate commodo lectus, ac blandit elit tincidunt id.
+            </p>
+          </div>
+          <div
+            class="d-sm-flex align-items-center justify-content-between discFooter"
+          >
+            <ul class="redeemDate">
+              <li>Redeemed By: 10 Users</li>
+              <li>Redeemed On: 26th Nov 2017</li>
+            </ul>
+            <!-- <h4 class="text-center">Yet to Redeem</h4> -->
+
+            <div class="btn-field">
+              <button
+                class="button red button-rounded button-uppercase button-width-large"
+                (click)="discoutDetailModal.hide()"
+              >
+                Delete
+              </button>
+              <button
+                class="button button-rounded button-uppercase button-width-large"
+                (click)="discoutvalueModal.show()"
+              >
+                Edit
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

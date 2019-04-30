@@ -1,0 +1,187 @@
+.discountValuePage{
+  .boxTop{
+    padding:12px 20px;
+    margin:0px 0 20px;
+    @include media("<=1200px") {
+      padding:15px;
+    }
+    h2{
+      @include text-format-weight(23px,$darken-grey,400);
+      margin:0;
+      @include media("<=992px") {
+        font-size: 18px;
+      }
+    }
+    .rightSec{
+      h3{
+        text-align: center;
+        margin:0 15px 0 0;
+        @include text-format-weight(36px,$color01,400);
+        border-right:1px dashed rgba($black,0.1);
+        padding-right:20px;
+        @include media("<=992px") {
+          font-size: 26px;
+        }
+        @include media("<=767px") {
+          padding-right:10px;
+          margin-right: 10px;
+          font-size: 20px;
+        }
+        span{
+          color: $darken-grey;
+          font-size: 16px;
+          display: block;
+        }
+      }
+    }
+    &.profileEditBox{
+      background-image: url(#{$url}profilebg.png);
+      background-position:right top;
+      background-repeat: no-repeat;
+      .settingProfileBox{
+        padding:12px 0;
+        h3{
+          font-size: 24px;
+          font-weight:400;
+          @include media("<=767px") {
+            font-size: 18px;
+          }
+          span{
+            display: block;
+            padding-bottom:5px;
+            font-size: 18px;
+            color: $darken-grey;
+            @include media("<=767px") {
+              font-size: 14px;
+            }
+          }
+        }
+        .userImage{
+          margin-right:20px;
+          @include height-width(102px,102px);
+          @include media("<=575px") {
+            @include height-width(80px,80px);
+          }
+        }
+      }
+      .rightSec{
+        padding: 15px 55px;
+        border-left:1px dashed rgba($black,0.1);
+        @include media("<=992px") {
+          padding: 15px 15px;
+        }
+        @include media("<=767px") {
+          padding: 15px 0px;
+          border-left:0 none;
+        }
+        h3{
+          margin:0;
+          border-right:0 none;
+          @include media("<=767px") {
+          }
+        }
+      }
+    }
+  }
+  .discountList{
+    .discountBox{
+      .discountBoxInner{
+        cursor: pointer;
+        padding:10px 20px;
+        @include pos(r, null);
+        margin-bottom:20px;
+        &:after, &:before{
+          content: '';
+          @include pos(a, calc(50% - 18px) null null -4px);
+          @include radius(50%);
+          box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+          border-right: 25px solid $light-grey;
+          border-top: 17px solid $light-grey;
+          border-bottom: 17px solid $light-grey;
+        }
+        &:before{
+          right:-4px;
+          left:auto;
+          box-shadow: -2px 0 5px rgba(0,0,0,0.1);
+          border-left: 25px solid $light-grey;
+          border-right:0 none;
+        }
+        .left{
+          padding:15px;
+          h3 {
+            @include text-format-weight(14px,$color00,400);
+            margin:0;
+            span{
+              display: block;
+              @include text-format-weight(16px,$color01,600);
+              text-transform: uppercase;
+              @include media("<=992px") {
+                font-size: 14px;
+              }
+            }
+          }
+          h2{
+            @include text-format-weight(22px,$font-color,400);
+            margin:10px 0 0 0;
+            @include media("<=992px") {
+              font-size: 18px;
+            }
+          }
+          h4{
+            @include text-format-weight(16px,$darken-grey,400);
+            margin-bottom:15px;
+            @include media("<=992px") {
+              font-size: 14px;
+            }
+            strong{
+              font-weight:600;
+            }
+          }
+        }
+        .right{
+          padding:15px;
+          border-left: 1px dashed #DDE3E9;
+          @include media("<=575px") {
+            border-left:0 none;
+            border-top: 1px dashed #DDE3E9;
+          }
+          h2 {
+            @include text-format-weight(50px,$font-color,600);
+            margin:0;
+            line-height: 40px;
+            @include media("<=992px") {
+              font-size: 30px;
+            }
+            sup{
+              font-size: 20px;
+              @include pos(r, -22px null null);
+              @include media("<=992px") {
+                font-size: 16px;
+                top:-10px;
+              }
+            }
+          }
+          h3 {
+            @include text-format-weight(16px,$color00,400);
+            margin-bottom: 25px;
+            @include media("<=992px") {
+              font-size: 14px;
+            }
+          }
+          h4 {
+            @include text-format-weight(16px,$main-color01,400);
+            border: 1px dashed #DDE3E9;
+            padding:2px 10px;
+            @include radius(4px);
+            &.green{
+              color: $color02;
+            }
+            @include media("<=992px") {
+              font-size: 14px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,37 @@
+<div class="dashboardHeader w-100 d-flex align-items-center justify-content-between">
+  <div class="dashboradLogo">
+    <a href=""><img src="assets/images/logo-blue.png" alt="" class="img-fluid"></a>
+  </div>
+  <div class="headerRight">
+    <ul class="d-flex align-items-center">
+      <li><i class="icon-mail" routerLink="/feedback"></i></li>
+      <li dropdown placement="bottom left">
+        <a routerLink="javascript:void(0);" id="button-nested"  dropdownToggle class="dropdown-toggle" aria-controls="notificationDropdown">
+          <i class="icon-Notifications"></i></a>
+        <div id="notificationDropdown" *dropdownMenu  class="dropdown-menu  dropdown-menu-right" role="menu">
+          <div class="listTop d-flex align-items-center justify-content-between">
+            <h2>Notification</h2>
+            <button  routerLink="/notification" class="btn btn-outline-primary custom-btn">View All</button>
+          </div>
+          <ul>
+            <li *ngFor="let list of [1,2,3]" class="box d-flex align-items-md-center" routerLink="/report-detail" >
+              <div class="userImage"><img src="assets/images/profilePic.png"></div>
+                <div class="norifiDetail">
+                  <p><span>Merry</span> has marked the <span>Mendit</span> Project report as resolved.</p>
+                  <h4>14th Jan 2018 7:15 PM</h4>
+                </div>
+            </li>
+          </ul>
+        </div>
+      </li>
+      <li class="userInfo"><div class="userImage"><img src="assets/images/profilePic.png"></div><span class="userName">Natish</span></li>
+      <li class="menu-icon d-md-none">
+        <div class="ham-icon d-xl-none">
+          <div class="menu-icon" (click)="navToggleClass($event)">
+            <span></span> <span></span> <span></span>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>

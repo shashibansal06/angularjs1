@@ -1,0 +1,95 @@
+<div class="heading d-flex justify-content-between align-items-start mb-2">
+  <h1>Dashboard</h1>
+</div>
+<div class="dashboardPage teamDashboardPage">
+  <div class="row boxSection">
+    <div class="box col-sm-6 col-lg-3 text-center">
+      <div class="box-inner shadowBox">
+        <h2>Total Reports</h2>
+        <div class="icon">
+          <div class="icon-inner d-flex justify-content-center align-items-center">
+            <i class="icon-myproject"></i>
+          </div>
+        </div>
+        <div class="boxBottom d-flex justify-content-between align-items-center">
+          <div class="text-left"><h3>14</h3></div>
+          <div class="arrow"><a routerLink="/team/report-list" class="icon-arrow-right"></a></div>
+        </div>
+      </div>
+    </div>
+    <div class="box col-sm-6 col-lg-3 text-center">
+      <div class="box-inner shadowBox">
+        <h2>Unresolved</h2>
+        <div class="icon sky">
+            <div class="icon-inner d-flex justify-content-center align-items-center">
+            <i class="icon-issueReported"></i>
+          </div>
+        </div>
+        <div class="boxBottom d-flex justify-content-between align-items-center">
+          <div class="text-left"><h3>14</h3></div>
+          <div class="arrow"><a href="" class="icon-arrow-right"></a></div>
+        </div>
+      </div>
+    </div>
+    <div class="box col-sm-6 col-lg-3 text-center">
+      <div class="box-inner shadowBox">
+        <h2>Resolved By Me</h2>
+        <div class="icon orange">
+            <div class="icon-inner d-flex justify-content-center align-items-center">
+            <i class="icon-plan"></i>
+          </div>
+        </div>
+        <div class="boxBottom d-flex justify-content-between align-items-center">
+          <div class="text-left"><h3>14</h3></div>
+          <div class="arrow"><a href="" class="icon-arrow-right"></a></div>
+        </div>
+      </div>
+    </div>
+    <div class="box col-sm-6 col-lg-3 text-center">
+      <div class="box-inner shadowBox">
+        <h2>Closed By Service Provider</h2>
+        <div class="icon green">
+            <div class="icon-inner d-flex justify-content-center align-items-center">
+            <i class="icon-close-service"></i>
+          </div>
+        </div>
+        <div class="boxBottom d-flex justify-content-between align-items-center">
+          <div class="text-left"><h3>14</h3></div>
+          <div class="arrow"><a href="" class="icon-arrow-right"></a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="listSection">
+    <div class="listTop d-flex align-items-center justify-content-between">
+      <h2>Latest Reports</h2>
+      <button routerLink="/team/report-list" class="btn btn-outline-primary custom-btn">View All</button>
+    </div>
+
+    <div class="listSection">
+      <div class="row d-lg-flex align-items-center shadowBox reportlist" *ngFor="let list of statusList" >
+        <div class="col-lg-5">
+          <h5>Report ID :{{list.id}}</h5>
+          <h2>{{list.title}}</h2>
+          <h3>{{list.siteName}}</h3>
+        </div> 
+        <div class="col-6 col-lg-2">
+          <h5>Project URL</h5>
+          <h4>{{list.siteUrl}}</h4>
+        </div> 
+        <div class="col-6 col-lg-2">
+          <h5>Status</h5>
+          <h3 [ngClass]="{'navy' : list.status == 'Assigned' || list.status == 'Completed', 'red': list.status == 'Declined', 'orange': list.status == 'Reopened' ||  list.status == 'No action Taken',  'watergreen': list.status == 'Marked as resolved', 'green': list.status == 'Approved' || list.status == 'Request decline by admin'}">{{list.status}}</h3>
+        </div>
+        <div class="col-6 col-lg-2">
+          <h5>Date Assigned</h5>
+          <h4>{{list.date}}</h4>
+        </div>
+        <div class="arrow col-6 col-lg-1"><a routerLink="/team/report-detail" class="icon-arrow-right"></a></div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-musicbtn></app-musicbtn>
+
+

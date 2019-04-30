@@ -1,0 +1,64 @@
+<div class="heading d-sm-flex justify-content-between align-items-center">
+    <h1>My Projects</h1>
+    <div class="d-flex justify-content-between">
+      <div class="btn-group" dropdown [autoClose]="false">
+        <button
+          id="button-basic"
+          dropdownToggle
+          type="button"
+          class="icon-search circleBtn dropdown-toggle"
+          aria-controls="dropdown-basic"
+        ></button>
+        <div
+          id="dropdown-basic"
+          *dropdownMenu
+          class="dropdown-menu dropdown-menu-right"
+          role="menu"
+          aria-labelledby="button-basic"
+        >
+          <input type="text" placeholder="Search Here" class="searchInput" />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="managePages projectListPage">
+    <div class="row boxSection">
+      <div
+        class="box col-sm-6 col-lg-3 text-center"
+        *ngFor="let list of [1, 2, 3]"
+      >
+        <div class="box-inner shadowBox">
+          <h2>Amazon</h2>
+          <h4>www.amazon.com</h4>
+          <div class="circleIcon">
+            <div
+              class="circleIcon-inner d-flex justify-content-center align-items-center"
+            >
+              <span>14</span>
+            </div>
+          </div>
+          <h3>Reports Submitted</h3>
+          <ul class="projectStatusBox d-flex align-items-center justify-content-around">
+            <li>
+              <h5>14<span>Approved</span></h5>
+            </li>
+            <li>
+              <h5 class="red">14<span>Declined</span></h5>
+            </li>
+          </ul>
+          <div
+            class="boxBottom d-xl-flex justify-content-between align-items-center">
+            <div class="text-left d-flex align-items-center">
+              <h4>Last Report : 26th Nov 2017</h4>
+            </div>
+            <div class="arrow text-right">
+              <a href="" class="icon-arrow-right"></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-musicbtn></app-musicbtn>
+
+

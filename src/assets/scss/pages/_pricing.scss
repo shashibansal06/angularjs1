@@ -1,0 +1,337 @@
+.pricingPage{
+  .boxTop{
+    padding:15px 25px;
+    @include media("<=1200px") {
+      padding:15px;
+    }
+    h3{
+      @include text-format-weight(22px,$font-color,400);
+      margin:0;
+      @include media("<=992px") {
+        font-size: 18px;
+      }
+      span{
+        display: block;
+        @include text-format-weight(23px,$darken-grey,400);
+      }
+    }
+    .rightSec{
+      h3{
+        text-align: center;
+        margin:0;
+        @include text-format-weight(36px,$color01,400);
+        border-left:1px dashed rgba($black,0.1);
+        padding:0 30px;
+        @include media("<=992px") {
+          font-size: 26px;
+        }
+        @include media("<=767px") {
+          padding-left:0px;
+          font-size: 20px;
+          text-align: left;
+          border:0 none;
+          margin-top:15px;
+        }
+        span{
+          color: $darken-grey;
+          font-size: 16px;
+          display: block;
+        }
+      }
+    }
+  }
+    .pricingTop{
+      border: 1px solid #DDE3E9;
+      box-shadow: 0 3px 5px 0 rgba(217,228,247,0.63);
+      padding:40px 45px;
+      margin: 0;
+      @include media("<=992px") {
+        padding: 10px 15px;
+      }
+      h2{
+        @include text-format-weight(30px,$color01,300);
+        margin-bottom: 0;
+        @include media("<=992px") {
+          margin-bottom: 10px;
+        }
+        @include media("<=767px") {
+          font-size: 20px;
+          margin-bottom: 10px;
+        }
+      }
+      p{
+        @include text-format-weight(22px,#486AA3,300);
+        margin-bottom:0;
+        @include media("<=992px") {
+          margin-bottom: 10px;
+        }
+        @include media("<=767px") {
+          font-size: 14px;
+          line-height: 20px;
+          margin-bottom: 10px;
+        }
+      }
+    }
+    .toggleBlock{
+      margin:52px 0px;
+      @include pos(r, null);
+      &:before{
+        content: '';
+        @include pos(a, 22px null null 0);
+        border-top: 1px solid #DDE3E9;
+        width: 100%;
+        @include media("<=767px") {
+          top:12px;
+        }
+      }
+      .radio-toggle{
+        label{
+          margin: 0;
+          vertical-align: middle;
+          background: white;
+          position: relative;
+          padding: 0 10px;
+          letter-spacing: 1px;
+          font-size: 20px;
+          @include media("<=767px") {
+            font-size: 14px;
+            padding: 0 5px;
+          }
+          &.purple{
+            color: $color01;
+            font-weight: 600;
+          }
+          &.z_checked{
+            height:40px;
+            @include media("<=767px") {
+              height:28px;
+            }
+          }
+        }
+      }
+    }
+    .sliderBox{
+      h3{
+        @include text-format-weight(20px,$darken-grey,400);
+        @include media("<=992px") {
+          font-size: 18px;
+        }
+      }
+      .custom-slider{
+        padding:100px 0 200px;
+        @include media("<=767px") {
+          padding:40px 0 90px;
+        }
+        .ng5-slider{
+          height:27px;
+          border-radius:14px;
+          @include media("<=767px") {
+            height:10px;
+          }
+          .ng5-slider-bar {
+            background-color: #F3F7FC;
+            height: 27px;
+            border: 1px solid #DDE3E9;
+            border-radius:14px;
+            @include media("<=767px") {
+              height:10px;
+            }
+          }
+          .ng5-slider-pointer {
+            width: 44px;
+            height: 44px;
+            top: -10px;
+            bottom: auto;
+            border-radius:50%;
+            border: 1px solid #DDE3E9;
+            background-color: #FFFFFF;
+            @include media("<=767px") {
+              width: 24px;
+              height: 24px;
+              top: -7px;
+            }
+            &:after {
+              display: none;
+            }
+          }
+          .ng5-slider-tick {
+            width: 1px;
+            border-radius: 0;
+            background-color: $darken-grey;
+            height: 64px;
+            top: -15px;
+            @include media("<=767px") {
+              height: 26px;
+              top: -5px;
+            }
+            &.ng5-slider-selected {
+              background-color: $darken-grey;
+            }
+          }
+          .ng5-slider-bubble.ng5-slider-model-value{
+            bottom: -126px;
+            background-color: $white;
+            z-index: 1;
+            color: #486AA3;
+            text-align: center;
+            font-size: 30px;
+            font-weight: 600;
+            border: 1px solid #DDE3E9;
+            padding: 5px 8px;
+            @include media("<=767px") {
+              font-size: 20px;
+              bottom:-100px;
+            }
+            h6{
+              text-transform: uppercase;
+              font-size: 16px;
+              padding:10px;
+              margin-top:15px;
+              margin-bottom: 0;
+              border-top: 1px solid #DDE3E9;
+              @include media("<=767px") {
+                font-size: 12px;
+                padding:5px;
+                margin-top:5px;
+              }
+            }
+            &:before , &:after{
+              content: '';
+              left: 0;
+              top: -26px;
+              z-index: 1;
+              position: absolute;
+              border-bottom: 25px solid #DDE3E9;
+              border-right: 50px solid transparent;
+              border-left: 49px solid transparent;
+              @include media("<=767px") {
+                top: -21px;
+                border-bottom-width: 20px;
+                border-right-width: 37px;
+                border-left-width: 37px;
+              }
+            }
+            &:after{
+              border-bottom: 25px solid white;
+              top: -25px;
+              @include media("<=767px") {
+                top: -20px;
+                border-bottom-width: 20px;
+              }
+            }
+          }
+          .ng5-slider-bubble.ng5-slider-limit {
+            display: none;
+          }
+          .ng5-slider-tick-legend {
+            top: -50px;
+            color:#486AA3;
+            text-align: center;
+            font-size: 30px;
+            @include media("<=767px") {
+              font-size: 18px;
+            }
+            p{
+              color: $darken-grey;
+              font-size: 16px;
+              @include media("<=767px") {
+                font-size: 12px;
+              }
+            }
+          }
+        }
+      }
+    }
+    .pricingBox{
+      margin:0;
+      .card{
+        margin-bottom:40px;
+        @include radius(0px);
+        border: 1px solid #DDE3E9;
+        padding:60px 40px 40px 40px;
+        @include media("<=1200px") {
+          padding:30px 20px 30px 20px;
+        }
+        .card-body{
+          padding:0;
+        }
+        .select-outer{
+          @include pos(r, null);
+          z-index: 1;
+          background-color:#F3F7FC;
+          &:after {
+            @include pos(a, calc(50% - 9px) 15px auto auto);
+            content: "\e921";
+            font-family: 'icomoon' !important;
+            @include text-format-weight(8px,#646464,600);
+            z-index: -1;
+            @media screen and (max-width:1200px){
+              top: calc(50% - 6px);
+              right: 10px;
+              font-size: 10px;
+            }
+            @media screen and (max-width:992px){
+              font-size: 8px;
+            }
+          }
+          select{
+            @include appear(none);
+            color:#486AA3;
+            cursor: pointer;
+              background-color: transparent;
+          }
+        }
+        h2{
+          @include text-format-weight(58px,$color01,700);
+          margin:0;
+          line-height:58px;
+          @include media("<=1200px") {
+            font-size: 40px;
+            line-height:40px;
+          }
+        }
+        h4{
+          @include text-format-weight(16px,#486AA3,600);
+          text-transform:uppercase;
+          @include media("<=1200px") {
+            font-size: 14px;
+          }
+        }
+        h5{
+          @include text-format-weight(16px,#486AA3,400);
+          @include media("<=1200px") {
+            font-size: 14px;
+          }
+        }
+        h3{
+          @include text-format-weight(42px,$color01,400);
+          @include media("<=1200px") {
+            font-size: 32px;
+          }
+        }
+        button{
+          @include pos(a, null 0 0 0);
+          margin: 0 auto -22px auto;
+        }
+        .lineBox{
+          margin:30px 0 20px 0;
+          border-top:1px solid #DDE3E9;
+          @include pos(r, null);
+          &:before, &:after{
+            @include pos(a, null null calc(50% - 7px) calc(50% - 7px));
+            content: "";
+            border-top: 8px solid #DDE3E9;
+            border-right: 7px solid transparent;
+            border-left: 7px solid transparent;
+          }
+          &:after{
+            border-top: 8px solid $white;
+            border-right-width: 5px;
+            border-left-width: 5px;
+            left: calc(50% - 5px);
+            bottom: calc(50% - 6px);
+          }
+        }
+      }
+    }
+  }

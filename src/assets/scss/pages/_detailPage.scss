@@ -1,0 +1,249 @@
+
+.detailPage{
+  background-color: $white;
+  h2,h3,h4,h5,h6{
+    margin: 0;
+  }
+  .box{
+    padding:25px 60px 40px;
+    @include media("<=1200px") {
+      padding:25px 40px 25px;
+    }
+    @include media("<=992px") {
+      padding:25px 20px 25px;
+    }
+    @include media("<=767px") {
+      padding:25px 15px 20px;
+    }
+  }
+  .detailBox{
+    h2{
+      font-size: 34px;
+      font-weight: bold;
+      margin-bottom:10px;
+      @include media("<=1200px") {
+        font-size: 24px;
+      }
+      @include media("<=767px") {
+        font-size:18px;
+      }
+    }
+    h3{
+      @include text-format-weight(18px,$color00,600);
+      @include media("<=992px") {
+        font-size: 14px;
+      }
+    }
+    h4{
+      @include text-format-weight(23px,$color01,bold);
+      @include media("<=992px") {
+        font-size: 16px;
+      }
+    }
+    h5{
+      @include text-format-weight(15px,$color00,600);
+      margin-bottom:25px;
+      @include media("<=992px") {
+        font-size: 14px;
+        margin-bottom:20px;
+      }
+    }
+    h6{
+      font-weight: 400;
+      margin-bottom: 18px;
+      @include media("<=992px") {
+        font-size: 14px;
+        margin-bottom: 10px;
+      }
+      i{
+        margin-right:5px;
+        font-size: 20px;
+        @include media("<=992px") {
+          font-size: 16px;
+        }
+      }
+      span{
+        color: $darken-grey;
+      }
+    }
+  }
+  .rightSect{
+    .button{
+      margin: 0 5px;
+      @include media("<=767px") {
+        margin:10px 2px 0 2px;
+      }
+    }
+    .circleIcon{
+      @include height-width(128px,128px);
+      @include radius(50%);
+      @include gradiant-45(#4040eb,#954ceb);
+      padding: 4px;
+      display: inline-block;
+      margin:25px 0 10px 0;
+      @include media("<=1200px") {
+        @include height-width(90px,90px);
+        margin-top:15px;
+      }
+      @include media("<=992px") {
+        margin-top:10px;
+      }
+      .circleIcon-inner{
+        background-color: $white;
+        height: 100%;
+        @include radius(50%);
+        span{
+          @include text-format-weight(40px,#486AA3,400);
+          line-height: 16px;
+          margin-top:5px;
+          @include media("<=1200px") {
+            font-size: 30px;
+          }
+          span{
+            @include text-format-weight(15px,$color00,500);
+            display: block;
+          }
+        }
+      }
+    }
+  }
+
+  .statusBox{
+    border-top:1px solid #DDE3E9;
+    border-bottom:1px solid #DDE3E9;
+    padding-top:0px;
+    padding-bottom:0;
+    min-height:60px;
+    @include media("<=1200px") {
+      min-height:50px;
+    }
+    @include media("<=992px") {
+      min-height:40px;
+    }
+    h4{
+      @include text-format-weight(18px,$darken-grey,600);
+      @include media("<=992px") {
+        font-size: 14px;
+      }
+      @include media("<=767px") {
+        margin:5px 0;
+      }
+      span{
+        color:$font-color;
+        &.orange{
+          color: $color04;
+        }
+        &.navy{
+          color: $color03;
+        }
+        &.green{
+          color: $color02;
+        }
+        &.watergreen{
+          color: $color05;
+        }
+        &.red{
+          color: $color06;
+        }
+        .userImage{
+          @include height-width(38px,38px);
+          margin:0 5px;
+          @include media("<=767px") {
+            @include height-width(30px,30px);
+          }
+        }
+      }
+    }
+
+  }
+  .cropedBox{
+    h4{
+      @include text-format-weight(18px,$color00,400);
+      margin-bottom: 20px;
+      @include media("<=992px") {
+        font-size: 14px;
+      }
+    }
+    .cropImage{
+      .imgBox{
+        @include pos(r,null);
+        display: inline-block;
+        padding: 10px;
+        &:after, &:before{
+          content: '';
+          @include pos(a, -10px null null 0px);
+          border-color: #EFF2F5;
+          border-width:0 1px 0 1px;
+          @include height-width(calc(100% + 20px) , calc(100% + 0px));
+          border-style: dashed;
+        }
+        &:before{
+          border-width:1px 0;
+          top: 0px;
+          left: -10px;
+          @include height-width( calc(100% + 0px) ,calc(100% + 20px));
+        }
+        img{
+          border:2px solid #EFF2F5;
+        }
+      }
+    }
+  }
+  .commentBox{
+    h3{
+      @include text-format-weight(18px,$font-color,700);
+      @include media("<=992px") {
+        font-size: 14px;
+      }
+    }
+    .media{
+      margin-top:10px;
+      .userImage{
+        @include height-width(38px,38px);
+        margin-right:10px;
+        @include media("<=767px") {
+          @include height-width(30px,30px);
+        }
+      }
+      .btn{
+        &.btn-link{
+          padding:0;
+          @include text-format-weight(16px,$color01,600);
+          &:hover{
+            text-decoration:none;
+          }
+          i{
+            font-size:16px;
+            vertical-align:middle;
+          }
+        }
+      }
+      .nextmedia{
+        border-top: 1px solid #F6F9FE;
+        padding: 30px 0;
+        margin-top:30px;
+        @include media("<=992px") {
+          padding: 20px 0;
+          margin-top:20px;
+        }
+      }
+      h5{
+        font-size: 20px;
+        font-weight: 400;
+        margin-top:5px;
+        @include media("<=992px") {
+          font-size: 16px;
+          margin-top:0px;
+        }
+      }
+      p{
+        font-size: 16px;
+        line-height:20px;
+        @include media("<=992px") {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
+

@@ -1,0 +1,19 @@
+.formWrapper{
+  .formWrapper-block{
+    .sFormBox{
+      &.verifypage{
+        padding:3.5em 8em;
+        @media screen and (max-width:990px) {
+          padding:2em 4em;
+        }
+        @media screen and (max-width:767px) {
+          padding:2em 2em;
+        }
+        h4{
+          line-height:28px;
+          margin-top:0.8em;
+        }
+      }
+    }
+  }
+}

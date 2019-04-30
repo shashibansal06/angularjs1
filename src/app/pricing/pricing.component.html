@@ -1,0 +1,100 @@
+<app-inner-banner>
+  <h3>Start Now & Upgrade Later</h3>
+  <h4>Find the perfect plan for your business.</h4>
+</app-inner-banner>
+  <div class="contentWrapper contentpages pricingPage">
+    <div class="container">
+      <div class="row pricingTop align-items-center justify-content-between">
+        <div class="">
+          <h2>Free & No Risk</h2>
+          <p>Use our tools for free And only pay for rewarding your user base.</p>
+        </div>
+        <div class="">
+          <button class="button button-rounded button-uppercase button-width-large">Let's start today</button>
+        </div>
+      </div>
+
+      <div class="row toggleBlock justify-content-center">
+        <div class="radio-toggle">
+          <label [ngClass]="{'purple' : !abc.checked}">Monthly/Yearly</label>
+          <label class="z_checked">
+              <input type="checkbox" name="checkboxInline" #abc (change)="0" >
+              <span></span>
+          </label>
+          <label [ngClass]="{'purple' : abc.checked }">Pay as you Go</label>
+        </div>
+      </div>
+      <div class="sliderBox" *ngIf ="abc.checked">
+        <h3 class="text-center">Your subscription can be scaled up or down</h3>
+        <div class="custom-slider">
+          <ng5-slider  [(value)]="value"  [options]="options"></ng5-slider>
+        </div>
+      </div>
+      <div class="row pricingBox" *ngIf ="!abc.checked">
+        <div class="card col-md-6 col-lg-3">
+          <div class="card-body text-center">
+            <h4>Small Business</h4>
+            <h2>500</h2>
+            <h5>Lychees</h5>
+            <div class="lineBox"></div>
+            <h3>$ 29.90</h3>
+            <div class="form-group select-outer">
+              <select class="form-control">
+                <option>Yearly</option>
+                <option>Monthly</option>
+              </select>
+            </div>
+            <button class="button button-rounded button-uppercase button-width-large">Buy Now</button>
+          </div>
+        </div>
+        <div class="card col-md-6 col-lg-3">
+          <div class="card-body text-center">
+            <h4>Medium Business</h4>
+            <h2>1000</h2>
+            <h5>Lychees</h5>
+            <div class="lineBox"></div>
+            <h3>$ 49.90</h3>
+            <div class="form-group select-outer">
+              <select class="form-control">
+                <option>Yearly</option>
+                <option>Monthly</option>
+              </select>
+            </div>
+            <button class="button button-rounded button-uppercase button-width-large">Buy Now</button>
+          </div>
+        </div>
+        <div class="card col-md-6 col-lg-3">
+          <div class="card-body text-center">
+            <h4>Professional Business</h4>
+            <h2>2500</h2>
+            <h5>Lychees</h5>
+            <div class="lineBox"></div>
+            <h3>$ 90.90</h3>
+            <div class="form-group select-outer">
+              <select class="form-control">
+                <option>Yearly</option>
+                <option>Monthly</option>
+              </select>
+            </div>
+            <button class="button button-rounded button-uppercase button-width-large">Buy Now</button>
+          </div>
+        </div>
+        <div class="card col-md-6 col-lg-3">
+          <div class="card-body text-center">
+            <h4>Advanced Business</h4>
+            <h2>10000</h2>
+            <h5>Lychees</h5>
+            <div class="lineBox"></div>
+            <h3>$ 199.9</h3>
+            <div class="form-group select-outer">
+              <select class="form-control">
+                <option>Yearly</option>
+                <option>Monthly</option>
+              </select>
+            </div>
+            <button class="button button-rounded button-uppercase button-width-large">Buy Now</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

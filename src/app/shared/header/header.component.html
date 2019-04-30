@@ -1,0 +1,61 @@
+<header id="header">
+  <div
+    class="headerBlock"
+    [ngClass]="{ open: MenuToggleClass }"
+    *ngIf="isDataHeader == true"
+  >
+    <div class="container-fluid">
+      <div class="row align-items-center">
+        <div class="col-md-3 col-sm-3">
+          <a routerLink="/home" class="logo">
+            <img
+              src="assets/images/logo-white.png"
+              class="img-fluid"
+              alt="logo"
+            />
+          </a>
+        </div>
+        <div class="col-md-9 col-sm-9">
+          <div class="navBlock">
+            <div class="navList" [ngClass]="{ open: MenuToggleClass }">
+              <ul>
+                <li><a routerLink="/home">Home</a></li>
+                <li><a routerLink="/about">About us</a></li>
+                <li><a routerLink="/features">Features</a></li>
+                <li><a href="#">Pricing</a></li>
+                <li><a routerLink="/blog">Blog</a></li>
+                <li><a routerLink="/contact">Contact us</a></li>
+              </ul>
+            </div>
+
+            <div class="ham-icon d-xl-none">
+              <div class="menu-icon" (click)="navToggleClass($event)">
+                <span></span> <span></span> <span></span>
+              </div>
+            </div>
+
+            <div class="_authOpt">
+              <div class="_loginBtn">
+                <a routerLink="/login"> <i class="icon-login-icon ico"></i> <span>LOGIN</span> </a>
+              </div>
+              <button routerLink="/signUp"
+                class="button button-border button-rounded button-font-sans button-width-large button-h-left signUp-btn"
+              >
+                <span>BECOME A MEMBER</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="headerBlock inner" *ngIf="isDataHeader == false">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <a routerLink="/home"> <img src="assets/images/logo-blue.png" alt="logo" /> </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>

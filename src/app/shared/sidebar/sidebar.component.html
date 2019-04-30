@@ -1,0 +1,34 @@
+<aside class="sidebar d-flex flex-column"  [ngClass]="{ 'open': MenuToggleClass }">
+  <ul>
+    <li><a routerLink="/dashboard"><i class="icon-Dashboard"></i></a></li>
+    <li><a routerLink="/manage-projects"><i class="icon-Projects"></i></a></li>
+    <li><a routerLink="/manage-team"><i class="icon-Team"></i></a></li>
+    <li><a routerLink="/report-list"><i class="icon-Reports"></i></a></li>
+    <li container="body" dropdown placement="top right">
+      <a routerLink="javascript:void(0);" id="button-nested"  dropdownToggle class="dropdown-toggle" aria-controls="dropdown-nested">
+        <i class="icon-Setting"></i></a>
+      <ul id="dropdown-nested" *dropdownMenu  class="dropdown-menu dropdown-menu-left" role="menu">
+        <li><a routerLink="/setting/profile">Profile</a></li>
+        <li><a routerLink="/discount-value">Discount Values</a></li>
+        <li><a routerLink="/setting/subscription">Subscriptions</a></li>
+        <li><a routerLink="/setting/payments">Payments</a></li>
+        <li><a routerLink="/setting/transactions">Transactions</a></li>
+        <li><a routerLink="/activity-log">Activity Log</a></li>
+      </ul>
+    </li>
+  </ul>
+  <ul>
+    <li><a routerLink="/team/dashboard"><i class="icon-Dashboard"></i></a></li>
+    <li><a routerLink="/team/report-list"><i class="icon-Reports"></i></a></li>
+    <li><a routerLink="/profile"><i class="icon-Setting"></i></a></li>
+  </ul>
+  <ul>
+    <li><a routerLink="/consumer/dashboard"><i class="icon-Dashboard"></i></a></li>
+    <li><a routerLink="/consumer/project-list"><i class="icon-Projects"></i></a></li>
+    <li><a routerLink="/consumer/submitted-list"><i class="icon-Reports"></i></a></li>
+    <li><a routerLink="/consumer/profile"><i class="icon-user"></i></a></li>
+  </ul>
+  <div class="mt-auto">
+    <button class="logoutBtn icon-Logout btn-block" (click)="logoutModal()"></button>
+  </div>
+</aside>

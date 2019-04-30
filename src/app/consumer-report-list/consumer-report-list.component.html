@@ -1,0 +1,90 @@
+<div class="heading d-sm-flex justify-content-between align-items-center mb-2 mb-md-3">
+    <nav aria-label="breadcrumb" class="custom_breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="#">Manage Projects</a></li>
+        <li class="breadcrumb-item"><a href="#">Amazon</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Reports</li>
+      </ol>
+    </nav>
+    <div class="d-flex justify-content-between">
+        <button class="button button-rounded button-uppercase button-width-large" (click)="staticModal.show()"><i class="icon-plus"></i> add new project</button>
+      <div class="btn-group" dropdown [autoClose]="false" >
+        <button id="button-basic" dropdownToggle type="button" class="icon-search circleBtn dropdown-toggle" aria-controls="dropdown-basic">
+        </button>
+        <div  id="dropdown-basic" *dropdownMenu class="dropdown-menu dropdown-menu-right"
+        role="menu" aria-labelledby="button-basic">
+            <input type="text" placeholder="Search Here" class="searchInput">
+        </div> 
+      </div>
+    </div>
+  </div>
+    <div class="dashboardPage teamDashboardPage">
+      <div class="listSection">
+        <div class="row d-lg-flex align-items-center shadowBox reportlist" *ngFor="let list of statusList">
+          <div class="col-lg-5">
+            <h5>Report ID :{{list.id}}</h5>
+            <h2>{{list.title}}</h2>
+            <h3>{{list.siteName}}</h3>
+          </div>
+          <div class="col-6 col-lg-2">
+            <h5>Lychees</h5>
+            <h4>{{list.quantity}}</h4>
+          </div>
+          <div class="col-6 col-lg-2">
+            <h5>Status</h5>
+            <h3 [ngClass]="{'navy' : list.status == 'Assigned' || list.status == 'Completed', 'red': list.status == 'Declined', 'orange': list.status == 'Reopened' ||  list.status == 'No action Taken',  'watergreen': list.status == 'Marked as resolved', 'green': list.status == 'Approved' || list.status == 'Request decline by admin'}">{{list.status}}</h3>
+          </div>
+          <div class="col-6 col-lg-2">
+            <h3 class="orange">No member assigned</h3>
+          </div>
+          <div class="arrow col-6 col-lg-1"><a  routerLink="/report-detail" class="icon-arrow-right"></a></div>
+        </div>
+        <div class="row d-lg-flex align-items-center shadowBox reportlist">
+          <div class="col-lg-5">
+            <h5>Report ID :0213AAD</h5>
+            <h2>Spelling mistake in Heading </h2>
+            <h3>Amazon</h3>
+          </div>
+          <div class="col-6 col-lg-2">
+            <h5>Lychees</h5>
+            <h4>200</h4>
+          </div>
+          <div class="col-6 col-lg-2">
+            <h5>Status</h5>
+            <h3 class="navy">Assigned</h3>
+          </div>
+          <div class="col-6 col-lg-2">
+            <h3 class="orange">No member assigned</h3>
+          </div>
+          <div class="arrow col-6 col-lg-1"><a href="" class="icon-arrow-right"></a></div>
+        </div>
+        <div class="row d-lg-flex align-items-center shadowBox reportlist">
+          <div class="col-lg-5">
+            <h5>Report ID :0213AAD</h5>
+            <h2>Spelling mistake in Heading </h2>
+            <h3>Amazon</h3>
+          </div>
+          <div class="col-6 col-lg-2">
+            <h5>Lychees</h5>
+            <h4>200</h4>
+          </div>
+          <div class="col-6 col-lg-2">
+            <h5>Status</h5>
+            <h3 class="orange">No action Taken</h3>
+          </div>
+          <div class="col-6 col-lg-2">
+            <div class="userInfo d-flex align-items-md-center">
+              <div class="userImage"><img src="assets/images/profilePic.png"></div>
+              <div class="info">
+                <h5>Assigned to</h5>
+                <h3>Merry</h3>
+              </div>
+            </div>
+          </div>
+          <div class="arrow col-6 col-lg-1"><a routerLink="/report-detail" class="icon-arrow-right"></a></div>
+        </div>  
+      </div>
+    </div>
+    <app-musicbtn></app-musicbtn>
+  
+  

@@ -1,0 +1,40 @@
+@import './scss/base';
+.teamMemberDetailPage{
+  .boxTop{
+    padding:15px 30px;
+    margin:0px 0 20px;
+    @include media("<=1200px") {
+      padding:15px;
+    }
+    h3{
+      font-size: 22px;
+      font-weight:400;
+      @include media("<=767px") {
+        font-size: 18px;
+      }
+      span{
+        display: block;
+        padding-bottom:5px;
+        font-size: 16px;
+        color: $darken-grey;
+        @include media("<=767px") {
+          font-size: 14px;
+        }
+      }
+    }
+    .userImage{
+      margin-right:20px;
+      @include height-width(74px,74px);
+    }
+    .rightSec{
+      .iconList{
+        li{
+          margin-left:60px;
+          @include media("<=767px") {
+            margin-right:60px;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,151 @@
+<nav aria-label="breadcrumb" class="custom_breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="#">Manage Reports</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Report Details</li>
+  </ol>
+</nav>
+
+<div class="detailPage reportDetailProject">
+  <div class="">
+    <div class="box detailOuter row justify-content-between align-items-end">
+      <div class="detailBox col-md-6">
+        <h5>Report ID :0213AAD</h5>
+        <h6><i class="icon-calendar"></i> <span>Submitted On:</span> 26th Nov 2017</h6>
+        <h4>Lychees</h4>
+        <h2>Spelling mistake in Heading </h2>
+        <h3>How Many times reported : 14</h3>
+      </div>
+      <div class="col-md-6 text-md-right rightSect">
+        <div class="">
+          <button class="button button-rounded button-uppercase button-width-large" (click)="assignMemberModal.show()">Assign Team</button>
+          <!--<button class="button button-rounded button-uppercase button-width-large" (click)="approveModal()">Approve</button>
+          <button class="button grey button-rounded button-uppercase button-width-large" (click)="declineModal.show()">Decline</button>-->
+          <!-- <button class="button button-rounded button-uppercase button-width-large" (click)="completedModal()">Completed</button>
+          <button class="button grey button-rounded button-uppercase button-width-large" (click)="reopenModal()">Reopen</button> -->
+        </div>
+        <div class="circleIcon">
+          <div class="circleIcon-inner d-flex justify-content-center align-items-center text-center">
+            <span>200<span>Lychees</span></span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="box statusBox d-sm-flex justify-content-between align-items-center">
+      <h4>Status: <span class="navy">Assigned</span>
+        <!-- <span class="orange">Reopened</span>
+        <span class="watergreen">Marked as Resolved</span>
+        <span class="green">Approved</span>
+        <span class="green">Request declined by Admin</span>
+        <span class="red">Declined</span>
+        <span class="watergreen">To be approved by Admin</span>
+      -->
+      </h4>
+      <h4>Assigned to: <span><div class="userImage">
+          <img src="assets/images/bitmap.png" alt="" class="img-fluid">
+        </div> Johnson</span>
+        <!-- <span class="orange">No member assigned</span>--></h4>
+    </div>
+  </div>
+  <div class="box cropedBox">
+    <h4>Reported Div Preview</h4>
+    <div class="cropImage">
+      <div class="imgBox">
+        <img src="assets/images/cropImg.jpg" alt="" class="img-fluid">
+      </div>
+    </div>
+  </div>
+  <div class="box commentBox">
+    <h3>Report Comment</h3>
+    <div class="media">
+      <a class="userImage" href="#">
+        <img src="assets/images/mediaImg.png" alt="" class="img-fluid">
+      </a>
+      <div class="media-body">
+        <h5>Patrick</h5>
+        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s. Dummy text of the printing and typesetting industry.
+          Lorem Ipsum has been the industry’s.</p>
+        <button class="btn btn-link">Reply <i class="icon-Reply"></i></button>
+        <div class="media nextmedia">
+          <a class="userImage" href="#">
+            <img src="assets/images/mediaImg.png" alt="" class="img-fluid">
+          </a>
+          <div class="media-body">
+            <h5>Me</h5>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-musicbtn></app-musicbtn>
+
+
+  <!-- decline modal start -->
+  <div class="modal fade " bsModal #declineModal="bs-modal" [config]="{backdrop: 'static'}"
+       tabindex="-1" role="dialog" aria-labelledby="dialog-static-name">
+    <div class="modal-dialog modal-lg customModal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 id="dialog-static-name" class="modal-title pull-left">Decline This Report</h4>
+          <button type="button" class="close pull-right" aria-label="Close" (click)="declineModal.hide()">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="field-group">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="form-group">
+                    <label class="">DECLINE REASON </label>
+                    <textarea class="form-control" placeholder="Say somthing about your project"></textarea>
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  <button class="button grey-outline button-rounded button-uppercase button-min-130">Report Abuse</button>
+                </div>
+              </div>
+              <div class="btn-field text-right padding-top-2x">
+                <button class="button button-rounded button-uppercase button-width-large" (click)="declineModal.hide()">Yes</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- assign member modal start -->
+  <div class="modal fade " bsModal #assignMemberModal="bs-modal" [config]="{backdrop: 'static'}"
+       tabindex="-1" role="dialog" aria-labelledby="dialog-static-name">
+    <div class="modal-dialog modal-lg customModal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 id="dialog-static-name" class="modal-title pull-left">Assign a team member</h4>
+          <button type="button" class="close pull-right" aria-label="Close" (click)="assignMemberModal.hide()">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body assignMemberModal">
+          <form>
+            <div class="teamMember">
+              <div class="teammembBox" *ngFor = "let list of [1,2,3,4,5,6]">
+                <label class="ch-radio">
+                  <input type="radio" name="name1" value="name1"  />
+                  <span>
+                    <i class="ch-icon icon-tick"></i> <div class="userImage"><img src="assets/images/teamMember.png" alt=""></div>Merry</span>
+                </label>
+              </div>
+            </div>
+            <div class="field-group">
+              <div class="btn-field text-right padding-top-2x">
+                <button class="button button-rounded button-uppercase button-width-large" (click)="assignMemberModal.hide()">Assign</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>

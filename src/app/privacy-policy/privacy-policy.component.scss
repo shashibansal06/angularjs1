@@ -1,0 +1,60 @@
+@import './scss/base';
+
+.privacyPolicyBlock {
+  strong{
+    font-weight:600;
+  }
+  .p-no-m{
+    p{
+      margin-bottom:0;
+    }
+  }
+  h2 {
+    font-size: 22px;
+    font-weight: 700;
+    @include media("<=990px") {
+      font-size: 20px;
+    }
+  }
+  h3 {
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin:0px 0 20px;
+    padding-top:10px;
+    @include media("<=990px") {
+      font-size: 18px;
+      margin-bottom:10px;
+    }
+  }
+  h4 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom:15px;
+    @include media("<=990px") {
+      font-size: 16px;
+    }
+  }
+  p{
+    margin-bottom:30px;
+    @include media("<=990px") {
+      font-size: 16px;
+      margin-bottom:20px;
+    }
+  }
+  ul{
+    margin-left: 30px;
+    margin-bottom:30px;
+    @include media("<=990px") {
+      margin-bottom:20px;
+    }
+    li{
+      padding-left: 5px;
+      line-height:28px;
+      list-style: disc outside;
+      @include media("<=990px") {
+        font-size: 16px;      
+      }
+    }
+  }
+}

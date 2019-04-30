@@ -1,0 +1,27 @@
+<app-inner-banner>
+  <h3>Blog </h3>
+  <h4>A Directory of Wonderful Things</h4>
+</app-inner-banner>
+<div class="contentWrapper blogpage">
+  <div class="container">
+    <div class="row" *ngFor="let list of [1,2,3]">
+      <div class="col box">
+        <div class="title">
+          <h2>The complete guide to explore Prague, in Winter</h2>
+          <h5>Posted on : 14th Dec 2017</h5>
+        </div>
+        <div class="image">
+          <img src="assets/images/post_1.png" alt="" class="img-fluid">
+        </div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer quis viverra sapien. Mauris vehicula est vitae sodales aliquam. Aliquam sem nisl, pretium et justo vitae, sagittis dictum nunc. Nulla facilisi. Sed ultrices nisl lorem, in consequat urna facilisis a. Sed eu hendrerit risus. Phasellus tempor nisl ligula, id cursus nunc tincidunt nec. </p>
+        <div class="text-center">
+          <button class="button button-jumbo button-16 button-rounded button-uppercase button-min-250">READ MORE</button>
+        </div>
+      </div>
+    </div>
+    <div class="mb-2 pb-2 mb-md-5 pb-md-5 text-center customPagination">
+      <pagination [directionLinks]="showDirectionLinks" previousText="&lsaquo;" nextText="&rsaquo;"   [totalItems]="55"></pagination>
+    </div>
+  </div>
+  <app-blog-footer></app-blog-footer>
+</div>

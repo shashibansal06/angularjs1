@@ -1,0 +1,54 @@
+<div class="heading d-sm-flex justify-content-between align-items-center mb-2 mb-md-3">
+  <h1>Manage Team</h1>
+  <div class="d-flex justify-content-between">
+    <div class="btn-group" dropdown [autoClose]="false" >
+      <button id="button-basic" dropdownToggle type="button" class="icon-search circleBtn dropdown-toggle" aria-controls="dropdown-basic">
+      </button>
+      <div  id="dropdown-basic" *dropdownMenu class="dropdown-menu dropdown-menu-right"
+      role="menu" aria-labelledby="button-basic">
+          <input type="text" placeholder="Search Here" class="searchInput">
+      </div>
+    </div>
+  </div>
+</div>
+  <div class="dashboardPage teamMemberDetailPage">
+    <div class="boxTop profileEditBox shadowBox d-sm-flex justify-content-between align-items-center">
+      <div class="settingProfileBox d-sm-flex justify-content-between align-items-center">
+        <div class="activestatus">
+          <div class="userImage">
+            <img src="assets/images/bitmap.png" alt="" class="img-fluid">
+          </div>
+          <span class="green"></span>
+        </div>
+        <div>
+          <h3>Leona Curtis <span>leona_curtis@youpmail.com</span></h3>
+        </div>
+      </div>
+      <div class="rightSec">
+          <ul class="iconList d-flex align-items-center justify-content-around">
+            <li><i class="icon-Edit" popover="Edit" triggers="mouseenter:mouseleave"></i></li>
+            <li><i class="icon-Delete" popover="Delete" triggers="mouseenter:mouseleave"></i></li>
+          </ul>
+      </div>
+    </div>
+    <div class="listSection">
+      <div class="row d-lg-flex align-items-center shadowBox reportlist" *ngFor="let list of statusList">
+        <div class="col-lg-7">
+          <h5>Report ID :{{list.id}}</h5>
+          <h2>{{list.title}}</h2>
+          <h3>{{list.siteName}}</h3>
+        </div>
+        <div class="col-6 col-lg-2">
+          <h5>Lychees</h5>
+          <h4>{{list.quantity}}</h4>
+        </div>
+        <div class="col-6 col-lg-2">
+          <h5>Status</h5>
+          <h3 [ngClass]="{'navy' : list.status == 'Assigned' || list.status == 'Completed', 'red': list.status == 'Declined', 'orange': list.status == 'Reopened' ||  list.status == 'No action Taken',  'watergreen': list.status == 'Marked as resolved', 'green': list.status == 'Approved' || list.status == 'Request decline by admin'}">{{list.status}}</h3>
+        </div>
+        <div class="arrow col-6 col-lg-1"><a  routerLink="/report-detail" class="icon-arrow-right"></a></div>
+      </div>
+    </div>
+  </div>
+  <app-musicbtn></app-musicbtn>
+

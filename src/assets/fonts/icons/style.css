@@ -1,0 +1,184 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?f3z8el');
+  src:  url('fonts/icomoon.eot?f3z8el#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?f3z8el') format('truetype'),
+    url('fonts/icomoon.woff?f3z8el') format('woff'),
+    url('fonts/icomoon.svg?f3z8el#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-nvoice:before {
+  content: "\e926";
+  color: #c2c4f3;
+}
+.icon-a-star:before {
+  content: "\e927";
+  color: #c2c4f3;
+}
+.icon-s-star:before {
+  content: "\e928";
+  color: #c2c4f3;
+}
+.icon-w-star:before {
+  content: "\e929";
+  color: #c2c4f3;
+}
+.icon-left:before {
+  content: "\e924";
+}
+.icon-right:before {
+  content: "\e925";
+}
+.icon-star:before {
+  content: "\e923";
+}
+.icon-transction:before {
+  content: "\e922";
+  color: #7f8fa4;
+}
+.icon-arrowDown:before {
+  content: "\e921";
+  color: #90a1b5;
+}
+.icon-current:before {
+  content: "\e91e";
+  color: #486aa3;
+}
+.icon-point:before {
+  content: "\e91f";
+  color: #486aa3;
+}
+.icon-user:before {
+  content: "\e920";
+  color: #7f8fa4;
+}
+.icon-Reply:before {
+  content: "\e91d";
+  color: #042de0;
+}
+.icon-camera:before {
+  content: "\e91c";
+  color: #fff;
+}
+.icon-calendar:before {
+  content: "\e91b";
+  color: #bfc7d1;
+}
+.icon-filter:before {
+  content: "\e919";
+  color: #bfc7d1;
+}
+.icon-close-service:before {
+  content: "\e91a";
+  color: #486aa3;
+}
+.icon-plus:before {
+  content: "\e918";
+}
+.icon-search:before {
+  content: "\e917";
+  color: #bfc7d1;
+}
+.icon-code:before {
+  content: "\e914";
+  color: #bfc7d1;
+}
+.icon-Delete:before {
+  content: "\e915";
+  color: #bfc7d1;
+}
+.icon-Edit:before {
+  content: "\e916";
+  color: #bfc7d1;
+}
+.icon-arrow-right:before {
+  content: "\e913";
+  color: #dde3e9;
+}
+.icon-issueReported:before {
+  content: "\e90f";
+  color: #486aa3;
+}
+.icon-myproject:before {
+  content: "\e910";
+  color: #486aa3;
+}
+.icon-plan:before {
+  content: "\e911";
+  color: #486aa3;
+}
+.icon-team:before {
+  content: "\e912";
+  color: #486aa3;
+}
+.icon-Dashboard:before {
+  content: "\e906";
+  color: #7f8fa4;
+}
+.icon-Logout:before {
+  content: "\e907";
+  color: #fff;
+}
+.icon-mail:before {
+  content: "\e908";
+  color: #042de0;
+}
+.icon-music:before {
+  content: "\e909";
+  color: #fff;
+}
+.icon-Notifications:before {
+  content: "\e90a";
+  color: #042de0;
+}
+.icon-Projects:before {
+  content: "\e90b";
+  color: #7f8fa4;
+}
+.icon-Reports:before {
+  content: "\e90c";
+  color: #7f8fa4;
+}
+.icon-Setting:before {
+  content: "\e90d";
+  color: #7f8fa4;
+}
+.icon-Team:before {
+  content: "\e90e";
+  color: #042de0;
+}
+.icon-plane:before {
+  content: "\e905";
+}
+.icon-twitter:before {
+  content: "\e904";
+}
+.icon-tick:before {
+  content: "\e903";
+}
+.icon-facebook:before {
+  content: "\e901";
+}
+.icon-google:before {
+  content: "\e902";
+}
+.icon-login-icon:before {
+  content: "\e900";
+}

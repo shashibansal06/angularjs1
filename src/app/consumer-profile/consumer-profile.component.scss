@@ -1,0 +1,275 @@
+@import './scss/base';
+.discountValuePage{
+  &.consumerProfilePage{
+    .button{
+        &.lightGrey{
+            background-color:#DDE3E9;
+        }
+    }
+    .boxTop{
+      &.profileEditBox{
+        background-image:none;
+        .rightSec{
+          padding: 0;
+          border-left:0 none;
+          @include media("<=992px") {
+            padding:0;
+          }
+          li{
+              padding: 15px 55px;
+              border-left:1px dashed rgba($black,0.1);
+              @include media("<=767px") {
+                  border:0 none;
+                  padding:15px 0;
+              }
+              h3{
+                  padding:0;
+                  @include media("<=767px") {
+                      text-align:left;
+                  }
+                  span{
+                      &.total{
+                          margin-top:12px;
+                          color:$main-color01;
+                          font-size:16px;
+                      }
+                  }
+              }
+          }
+        }
+      }
+    }
+    .profileStatus{
+      padding: 50px 0;
+      border-top: 1px solid rgba($black,0.1);
+      margin-top: 15px;
+      @include media("<=1199px") {
+        padding: 15px;
+      }
+
+      @include media("<=992px") {
+        margin: 0 auto;
+        max-width: 555px;
+      }
+      @include media("<=767px") {
+        width: 275px;
+      }
+      .profileRanking{
+        @include pos(r, null);
+        background-color: $white;
+        .circleOuter{
+          padding-right:20px;
+          text-align: center;
+          @include media("<=1400px") {
+            padding-right:15px;
+          }
+          @include media("<=767px") {
+            padding-right:25px;
+          }
+          &:last-child{
+            .circleIcon{
+              &:before{
+                content: none;
+              }
+            }
+          }
+          &.active,&:hover{
+            .circleIcon{
+              @include gradiant-45(#4040eb,#954ceb);
+              &:before, &:after{
+                @include gradiant-45(#4040eb,#954ceb);
+              }
+              .circleIcon-inner{
+                span{
+                  &:before{
+                    color:#6B46EB;
+                  }
+                  &.blue{
+                    &:before{
+                      color:#3D7FFD;
+                    }
+                  }
+                  &.green{
+                    &:before{
+                      color:#40F718;
+                    }
+                  }
+                  &.yellow{
+                    &:before{
+                      color:#FFE300;
+                    }
+                  }
+                }
+              }
+            }
+            &.blue{
+              h2{
+                color:#3D7FFD;
+              }
+              .circleIcon{
+                .circleIcon-inner{
+                  span{
+                    &:before{
+                      color:#3D7FFD;
+                    }
+                  }
+                }
+              }
+            }
+            &.green{
+              h2{
+                color:#40F718;
+              }
+              .circleIcon{
+                .circleIcon-inner{
+                  span{
+                    &:before{
+                      color:#40F718;
+                    }
+                  }
+                }
+              }
+            }
+            &.yellow{
+              h2{
+                color:#FFE300;
+              }
+              .circleIcon{
+                .circleIcon-inner{
+                  span{
+                    &:before{
+                      color:#FFE300;
+                    }
+                  }
+                }
+              }
+            }
+            h3{
+              color:$theme;
+            }
+            h4{
+              color: $font-color;
+            }
+          }
+          h2{
+            @include text-format-weight(16px,#DDE3E9,400);
+            margin-top:5px;
+          }
+          h3{
+            @include text-format-weight(14px,#DDE3E9,600);
+            text-transform: uppercase;
+            margin:10px 0 5px 0;
+            @include media("<=1199px") {
+              margin-top:5px;
+            }
+          }
+          h4{
+            @include text-format-weight(16px,#DDE3E9,400);
+            margin:0;
+            @include media("<=1299px") {
+              font-size:14px;
+            }
+          }
+          &.smallCircle{
+            margin-top:38px;
+            @include media("<=1299px") {
+              margin-top:32px;
+            }
+            @include media("<=1199px") {
+              margin-top:27px;
+            }
+            .circleIcon{
+              @include height-width(26px,26px);
+              &:before{
+                width:218%;
+              }
+              .circleIcon-inner{
+                span{
+                  font-size: 14px;
+                }
+              }
+            }
+          }
+          .circleIcon{
+            @include pos(r, null);
+            @include height-width(102px,102px);
+            @include radius(50%);
+            background: #DDE3E9;
+            padding: 2px;
+            display: inline-block;
+            @include media("<=1299px") {
+              @include height-width(90px,90px);
+            }
+            @include media("<=1199px") {
+              @include height-width(80px,80px);
+            }
+            &:before{
+              @include pos(a,calc(50% - 1px) null null 100%);
+              content: '';
+              @include height-width(2px,100%);
+              background-color:#DDE3E9;
+            }
+            .circleIcon-inner{
+              background-color: $white;
+              height: 100%;
+              @include radius(50%);
+              span{
+                @include text-format-weight(56px,#486AA3,400);
+                @include media("<=1299px") {
+                  font-size: 30px;
+                }
+                &:before{
+                  color: #F3F7FC;
+                }
+              }
+            }
+          }
+        }
+
+      }
+    }
+  }
+}
+
+
+
+.slick-prev, .slick-next {
+	font-size: 0;
+	line-height: 0;
+	position: absolute;
+	top: 50%;
+	display: block;
+	width: 20px;
+	height: 20px;
+	padding: 0;
+	-webkit-transform: translate(0, -50%);
+	-ms-transform: translate(0, -50%);
+	transform: translate(0, -50%);
+	cursor: pointer;
+	color: transparent;
+	border: none;
+	outline: none;
+	background: transparent;
+}
+.slick-prev {
+  left: -20px;
+}
+.slick-next {
+  right: -20px;
+}
+.slick-prev:focus , .slick-next:focus{
+  outline:0 none;
+}
+.slick-prev::before, .slick-next::before {
+	font-family: 'icomoon' !important;
+	font-size: 16px;
+	line-height: 1;
+	opacity: .75;
+  color: black;
+  content:"\e924";
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+.slick-next::before {
+  content:"\e925";
+}

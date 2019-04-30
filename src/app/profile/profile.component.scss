@@ -1,0 +1,73 @@
+@import './scss/base';
+.profilePage{
+  .uploadOuter{
+    @include pos(r, null);
+    display: inline-block;
+    .uploadIcon{
+      @include pos(a, null 0 12px null);
+      @include height-width(39px,39px);
+      @include radius(50%);
+      overflow: hidden;
+      background-color: $main-color01;
+      text-align: center;
+      @include media("<=1200px") {
+        @include height-width(30px,30px);
+        bottom:20px;
+      }
+      &:hover{
+        background-color: #5860e8;
+      }
+      span{
+        font-size: 14px;
+        line-height: 38px;
+        @include media("<=1200px") {
+          font-size: 10px;
+          line-height: 28px;
+        }
+      }
+      input{
+        @include pos(a, null);
+        @include height-width(100%,100%);
+        opacity: 0;
+      }
+    }
+  }
+  .userImage{
+    @include height-width(133px,133px);
+    margin-bottom: 10px;
+  }
+  .nav-tabs{
+    border:0 none;
+    margin-top:20px;
+    .nav-link.active , .nav-link , .nav-item.show .nav-link{
+      border:0 none;
+    }
+    .nav-link{
+      color: $darken-grey;
+      font-size: 21px;
+      padding:0;
+      margin-right:40px;
+      @include media("<=767px") {
+        font-size: 15px;
+        margin-right:15px;
+      }
+      &:hover, &:focus, &.active{
+        color:$color01;
+      }
+    }
+  }
+  .tab-content{
+    padding:30px 0;
+    @include media("<=767px") {
+      padding:20px 0;
+    }
+    .btn{
+      &.btn-link{
+        padding:0;
+        text-decoration: underline;
+        color: $color01;
+        font-size: 16px;
+      }
+    }
+  }
+}
